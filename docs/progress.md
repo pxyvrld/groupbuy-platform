@@ -12,16 +12,15 @@
 
 ## 📅 TYDZIEŃ 0 (7-13 listopada 2025)
 
-### Cele:
-- [✅] VS Code zainstalowany
-- [✅] Git zainstalowany
-- [✅] Node.js zainstalowany
-- [✅] GitHub Copilot aktywowany
-- [✅] Repo utworzone
-- [ ] Struktura docs/ gotowa
-
 ### Zrobione:
-(zaznaczysz ✅ jak skończysz każdy krok)
+- ✅ VS Code zainstalowany
+- ✅ Git zainstalowany  
+- ✅ Node.js v22.14 (już był)
+- ✅ GitHub Copilot aktywowany
+- ✅ Repo utworzone: https://github.com/pxyvrld/groupbuy-platform
+- ✅ Struktura docs/ gotowa
+- ✅ Pierwszy commit i push
+- ✅ Setup zakończony: 7 listopada 2025, 02:54 (prawdziwa dev noc 😄)
 
 ### Notatki:
 - Repo: https://github.com/pxyvrld/groupbuy-platform
