@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #0d7e58;
+}
+
+img {
+    height: 5rem
+}
+
+nav {
+    width: 100%;
+    background-color: #111827;
+    color: white;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+}
+
+.logoContainer {
+    background-color: #10B981;
+    height: 3rem;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    border-color: #10B981;
+    border-style: solid;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+#loginBtn {
+    background-color: #10B981;
+    color: black;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+}
+
+nav img {
+    height: 2.5rem;
+}
+
+.hero {
+    background-color: #10B981;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    gap: 2rem;
+}
+
+.browseBtn {
+    background-color: #111827;
+    text-decoration: none;
+    color: white;
+    border-radius: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+}
+
+
+.campaigns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    height: 100vh;
+}
+
+.campaigns h2 {
+    color: white;
+    margin-top: 2rem;
+}
+
+.card {
+    display: flex;
+    background-color: white;
+    width: 80%;
+    border-radius: 1rem;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.card img {
+    flex: 1;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 1rem;
+}
+
+.card_metaProgressContainer {
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card_meta{
+    display: flex;
+}
+
+.card_meta h3 {
+    margin-right: 1rem;
+}
+
+.card_progressBar {
+    background-color: red;
+    height: 1.5rem;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.progress {
+    background-color: #10B981;
+    width: 70%;
+    height: 1.5rem;
+    border-radius: 1rem;
+}
+
+.card_timePeopleContainer {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    height: 4rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card_timePeopleContainer img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.card_time {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.card_people_meter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card_detailsBtn {
+    flex: 0.1;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111827;
+    color: white;
+    height: 4rem;
+}
