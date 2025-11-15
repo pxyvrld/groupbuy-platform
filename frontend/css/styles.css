@@ -118,6 +118,8 @@ nav img {
     padding: 1rem 2rem;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
 .browseBtn:hover {

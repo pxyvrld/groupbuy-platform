@@ -1,5 +1,8 @@
 console.log("JS loaded");
 
+
+//feat: Countdown Timer on cards
+
 function timetoSeconds(timeString) {
     let parts = timeString.split(":");
     let hours = parseInt(parts[0]);
@@ -36,3 +39,11 @@ timeElement.forEach((e) => {
     }, 1000);
 
 })
+
+
+let browseBtn = document.querySelector(".browseBtn");
+let campaignsSection = document.querySelector("#campaigns");
+
+browseBtn.addEventListener("click", () => {
+    campaignsSection.scrollIntoView({ behavior: 'smooth' });
+});
