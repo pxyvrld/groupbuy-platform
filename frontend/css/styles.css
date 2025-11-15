@@ -1,0 +1,353 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #0d7e58
+}
+
+nav {
+    width: 100%;
+    background-color: #111827;
+    color: white;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logoContainer {
+    background-color: #10B981;
+    height: 3rem;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    font-weight: bold;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    border-color: #10B981;
+    border-style: solid;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #10B981;
+    color: black;
+}
+
+#loginBtn {
+    background-color: #10B981;
+    color: black;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#loginBtn:hover {
+    background-color: #111827;
+    color: #10B981;
+}
+
+nav img {
+    height: 2.5rem;
+}
+
+.hero {
+    background: linear-gradient(to bottom, #10B981 55%, #0d7e58 100%);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-align: center;
+}
+
+.heroImg {
+    height: 20rem;
+    margin-bottom: 4rem;
+    transition: transform 0.3s;
+}
+
+.heroImg:hover {
+    transform: scale(1.05);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.browseBtn {
+    background-color: #111827;
+    text-decoration: none;
+    color: #10B981;
+    border-radius: 50px;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.browseBtn:hover {
+    background-color: #10B981;
+    color: #111827;
+}
+
+.campaigns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+}
+
+.campaigns h2 {
+    color: black;
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.card {
+    display: flex;
+    background-color: white;
+    width: 80%;
+    border-radius: 1rem;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+}
+
+.card_img {
+    flex: 0 0 80px;
+    height: 80px;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.card_img img {
+    border-radius: 1rem;
+    height: 80px;
+    width: 80px;
+}
+
+.card_metaProgressContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card_meta {
+    display: flex;
+}
+
+.card_meta h3 {
+    margin-right: 1rem;
+}
+
+.card_progressBar {
+    background-color: rgb(211, 82, 82);
+    height: 1.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 0 1px black;
+    overflow: hidden;
+}
+
+.progress {
+    background-color: #10B981;
+    height: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0 1px black;
+}
+
+.card--1 .progress {
+    width: 70%;
+}
+
+.card--2 .progress {
+    width: 90%;
+}
+
+.card--3 .progress {
+    width: 62.5%;
+}
+
+.card_timePeopleContainer {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    height: 4rem;
+    justify-content: space-between;
+    align-items: space-between;
+    gap: 0.5rem;
+}
+
+.card_timePeopleContainer img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.card_time {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.card_people_meter {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.card_detailsBtn {
+    flex: 0 0 10px;
+    height: 80px;
+}
+
+.card_detailsBtn a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 2rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s;
+}
+
+.card_detailsBtn a:hover {
+    transform: translateX(10px);
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    color: #999;
+    height: 4rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #10B981;
+}
+
+@media (max-width: 768px) {
+
+    nav {
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .hero {
+        padding: 2rem;
+    }
+
+    .heroImg {
+        height: 15rem;
+        margin-bottom: 2rem;
+    }
+
+    .card {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .card_img {
+        height: 200px;
+        width: 100%;
+    }
+
+    .card_img img {
+        height: 100%;
+        width: 100%;
+        border-radius: 1rem 1rem 0 0;
+        object-fit: cover;
+    }
+
+    .card_meta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .card_metaProgressContainer {
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .card_timePeopleContainer {
+        text-align: center;
+        flex: 1;
+        gap: 1rem;
+    }
+
+    .card_time {
+        justify-content: center;
+        flex: 1;
+    }
+
+    .card_people_meter {
+        justify-content: center;
+        flex: 1;
+    }
+
+    .card_detailsBtn {
+        flex: 0;
+        transform: rotate(90deg);
+    }
+
+    .card_detailsBtn a {
+        height: 20px;
+        padding: 1.5rem;
+    }
+}
