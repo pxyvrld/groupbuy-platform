@@ -2,7 +2,7 @@
 
 Full-stack platform for group buying - portfolio project for internship.
 
-**Status:** ✅ Week 0 Complete | 🚧 Week 1 Starting
+**Status:** ✅ Week 1 Complete | 🚧 Week 2 Starting
 
 ---
 
@@ -77,8 +77,9 @@ Platform for organizing group purchases to get better prices. The more people jo
 
 **Progress:**
 - ✅ Week 0: Setup & Wireframes (Nov 7-8)
-- 🚧 Week 1-2: HTML/CSS Landing Page
-- ⏳ Week 3-4: JavaScript Basics
+- ✅ Week 1: HTML/CSS Landing Page (Nov 9-15)
+- 🚧 Week 2: JavaScript Basics (Nov 16-22)
+- ⏳ Week 3-4: Interactive Features
 - ⏳ Week 5-6: React + TypeScript
 - ⏳ Week 7-12: Spring Boot Backend
 - ⏳ Week 13-16: Integration & Real-time
@@ -95,10 +96,26 @@ Target: Full-stack Java Developer internship
 
 ---
 
+## 📸 Screenshots
+
+### Week 1: Landing Page (HTML/CSS)
+
+**Desktop:**
+
+![Hero Section](docs/screenshots/week1/week1-desktop-hero.png)
+![Campaign Cards](docs/screenshots/week1/week1-desktop-cards.png)
+
+**Mobile:**
+
+![Mobile Hero](docs/screenshots/week1/week1-mobile-hero.png)
+![Mobile Cards](docs/screenshots/week1/week1-mobile-cards.png)
+
+---
+
 ## 📝 License
 
 MIT License - Educational project, feel free to learn from it.
 
 ---
 
-_Last updated: November 8, 2025, 02:00 UTC_
+_Last updated: November 15, 2025, 01:11 UTC_

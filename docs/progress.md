@@ -39,21 +39,47 @@
 
 **Status:** ✅ ZAKOŃCZONY (8 listopada 2025, 02:00)
 
-## 📅 TYDZIEŃ 1: HTML/CSS Basics (9-16 listopada 2025)
+## 📅 TYDZIEŃ 1: HTML/CSS Basics (9-15 listopada 2025)
 
 ### Cele:
 - Landing Page w czystym HTML/CSS
 - Navbar, Hero, Campaign Cards, Footer
-- Flexbox/Grid w praktyce
-- Responsywność (mobile-first)
+- Flexbox w praktyce
+- Responsywność (desktop-first approach)
+- Hover animations
 
-### Do zrobienia:
-- [ ] Struktura HTML Landing Page
-- [ ] CSS styling (navbar, hero, cards)
-- [ ] Flexbox layout
-- [ ] Responsywność (media queries)
+### Zrobione:
+- ✅ Struktura HTML Landing Page (semantyczny, accessibility)
+- ✅ CSS styling z Flexbox layout
+  - Navbar (sticky, z-index: 1000)
+  - Hero section (gradient background, logo)
+  - Campaign cards (horizontal desktop, vertical mobile)
+  - Footer z linkiem do GitHub
+- ✅ Responsywność (breakpoint 768px)
+  - Desktop: horizontal cards (80% width)
+  - Mobile: vertical cards (95% width, full-width images)
+- ✅ Hover animations (transition + transform)
+  - Karty: `translateY(-8px)` + box-shadow
+  - Buttony: color inversion
+  - Linki navbar: background-color change
+  - Strzałka: `translateX(10px)` (desktop), `rotate(90deg)` (mobile)
+- ✅ Progress bary z dynamicznymi wartościami (70%, 90%, 62.5%)
+- ✅ CSS concepts w praktyce:
+  - `overflow: hidden` (progress bar rounded corners)
+  - `object-fit: cover` (obrazki bez rozciągania)
+  - `z-index` (navbar nad wszystkim)
+  - `box-shadow` (depth effect)
+  - `transform` (smooth animations)
 
-**Status:** ⏳ Oczekujący (start: 8-9 listopada 2025)
+### Screenshots:
+![Desktop Hero](screenshots/week1/week1-desktop-hero.png)
+![Desktop Cards](screenshots/week1/week1-desktop-cards.png)
+![Mobile Hero](screenshots/week1/week1-mobile-hero.png)
+![Mobile Cards](screenshots/week1/week1-mobile-cards.png)
+
+**Status:** ✅ ZAKOŃCZONY (15 listopada 2025, 01:11 UTC)
 
 ### Notatki:
 - Repo: https://github.com/pxyvrld/groupbuy-platform
+- Następny projekt: mobile-first (`min-width` zamiast `max-width`)
+- Hamburger menu na mobile (Week 3 - JavaScript)
