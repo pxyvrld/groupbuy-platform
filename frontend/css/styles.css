@@ -45,8 +45,9 @@ nav ul {
     font-weight: bold;
 }
 
-nav ul li a {
-    text-decoration: none;
+nav ul li button {
+    background-color: #111827;
+    font-weight: bold;
     color: white;
     font-size: 1rem;
     border-color: #10B981;
@@ -54,9 +55,10 @@ nav ul li a {
     border-radius: 1rem;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
 }
 
-nav ul li a:hover {
+nav ul li button:hover {
     background-color: #10B981;
     color: black;
 }
@@ -67,6 +69,7 @@ nav ul li a:hover {
     border-radius: 1rem;
     padding: 0.5rem 1rem;
     font-weight: bold;
+    font-size: 1rem;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -199,19 +202,9 @@ nav img {
     background-color: #10B981;
     height: 1.5rem;
     border-radius: 1rem;
+    width: 0%;
     box-shadow: 0 0 0 1px black;
-}
-
-.card--1 .progress {
-    width: 70%;
-}
-
-.card--2 .progress {
-    width: 90%;
-}
-
-.card--3 .progress {
-    width: 62.5%;
+    transition: width 1.5s ease-out;
 }
 
 .card_timePeopleContainer {
@@ -246,9 +239,10 @@ nav img {
     height: 80px;
 }
 
-.card_detailsBtn a {
-    text-decoration: none;
+.card_detailsBtn button {
     font-weight: bold;
+    border: none;
+    background-color: white;
     color: black;
     font-size: 2rem;
     height: 80px;
@@ -256,10 +250,11 @@ nav img {
     align-items: center;
     justify-content: center;
     transition: transform 0.3s;
+    cursor: pointer;
 }
 
-.card_detailsBtn a:hover {
-    transform: translateX(10px);
+.card_detailsBtn button:hover {
+    transform: translateX(5px);
 }
 
 footer {
@@ -274,6 +269,102 @@ footer {
 footer a {
     text-decoration: none;
     color: #10B981;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+.modal-content {
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-closeBtn:hover {
+    color: #000;
+}
+
+.modal-body .card {
+    padding: 0;
+    box-shadow: none;
+    width: 100%;
+    background-color: transparent;
+    flex-direction: column;
+}
+
+.modal-body .card:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+.modal-body .card_img {
+    height: 300px;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.modal-body .card_img img {
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.modal-body .card_meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.modal-body .card_metaProgressContainer {
+    gap: 1rem;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.modal-body .card_timePeopleContainer {
+    text-align: center;
+    flex: 1;
+    gap: 1rem;
+}
+
+.modal-body .card_time {
+    justify-content: center;
+    flex: 1;
+}
+
+.modal-body .card_people_meter {
+    justify-content: center;
+    flex: 1;
 }
 
 @media (max-width: 768px) {
