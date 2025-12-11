@@ -1,5 +1,74 @@
 console.log("JS loaded");
 
+//feat: Dynamic campaigns
+
+let campaigns = [
+    {
+        id: 1,
+        image: '/frontend/assets/images/coffee.jpg',
+        title: 'Coffee from Roastery (10kg)',
+        price: 30,
+        category: 'food',
+        people: {current: 7, capacity: 10},
+        timeLeft: 66734
+    },
+
+    {
+        id: 2,
+        image: '/frontend/assets/images/yerba.png',
+        title: 'Yerba Mate Premium (10kg)',
+        price: 50,
+        category: 'food',
+        people: {current: 9, capacity: 10},
+        timeLeft: 44109
+    },
+
+    {
+        id: 3,
+        image: '/frontend/assets/images/skincare.webp',
+        title: 'Organic Premum Skincare Set',
+        price: 40,
+        category: 'beauty',
+        people: {current: 5, capacity: 8},
+        timeLeft: 20722
+    }
+    ];
+
+const campaignsContainer = document.querySelector(".campaigns");
+
+function generateCard(campaign) {
+    const progressPercent = ((campaign.people.current / campaign.people.capacity) * 100)
+
+    return `<article class="card card--${campaign.id}">
+                <div class="card_img">
+                    <img src="${campaign.image}" alt="${campaign.title} image">
+                </div>
+                <div class="card_metaProgressContainer">
+                    <div class="card_meta">
+                        <h3>${campaign.title}</h3>
+                        <span>${campaign.price}$ per person for a group of ${campaign.people.capacity}</span>
+                    </div>
+                    <div class="card_progressBar">
+                        <div class="progress" style= "width: ${progressPercent}%;"></div>
+                    </div>
+                </div>
+                <div class="card_timePeopleContainer">
+                    <div class="card_time">
+                        <img src="assets/images/timeicon.png" alt="Time Icon">
+                        <span>Remaining: <time class="remaining-time--${campaign.id}" aria-live="polite">${secondsToTime(campaign.timeLeft)}</time></span>
+                    </div>
+                    <div class="card_people_meter">
+                        <img src="assets/images/peopleicon.png" alt="People Icon">
+                        <span>${campaign.people.current}/${campaign.people.capacity} people joined</span>
+                    </div>
+                </div>
+                <div class="card_detailsBtn">
+                    <button class="detailsBtn">></button>
+                </div>
+            </article>`
+}
+
+campaignsContainer.innerHTML = campaigns.map(campaign => generateCard(campaign)).join('')
 
 //feat: Countdown Timer on cards
 
@@ -83,16 +152,4 @@ modalOverlay.addEventListener("click", (e) => {
     if(e.target === modalOverlay) {
         modal.classList.add("hidden")
     }
-})
-
-
-//feat: Dynamic progress bars
-
-const progressBars = document.querySelectorAll(".progress");
-
-progressBars.forEach((bar) => {
-    const peopleText = bar.closest(".card").querySelector(".card_people_meter span").innerText;
-    const number = parseInt(peopleText.split("/")[0])
-    const capacity = parseInt(peopleText.split(" ")[0].split("/")[1])
-    bar.style.width = (number/capacity) * 100 + "%"
 })
