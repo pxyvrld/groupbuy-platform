@@ -1,6 +1,6 @@
 console.log("JS loaded");
 
-//feat: Dynamic campaigns
+//feat: Dynamic campaigns and filter categories
 
 let campaigns = [
     {
@@ -36,6 +36,13 @@ let campaigns = [
 
 const campaignsContainer = document.querySelector(".campaigns");
 
+let filterCampaigns = (category) => {
+    if(category === "all") {
+        return campaigns;
+    }
+    return campaigns.filter(campaign => campaign.category === category);
+}
+
 function generateCard(campaign) {
     const progressPercent = ((campaign.people.current / campaign.people.capacity) * 100)
 
@@ -68,7 +75,19 @@ function generateCard(campaign) {
             </article>`
 }
 
-campaignsContainer.innerHTML = campaigns.map(campaign => generateCard(campaign)).join('')
+const renderCampaigns = (campaignsArray) => {
+    campaignsContainer.innerHTML = campaignsArray.map(campaign => generateCard(campaign)).join('')
+}
+
+const categoryFilter = document.querySelector("#category-filter");
+
+categoryFilter.addEventListener('change', (e) => {
+    const filteredCampaigns = filterCampaigns(e.target.value);
+    renderCampaigns(filteredCampaigns);
+});
+
+renderCampaigns(campaigns);
+
 
 //feat: Countdown Timer on cards
 

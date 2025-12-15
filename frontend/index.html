@@ -32,7 +32,17 @@
     </header>
 
     <main>
-        <h2>Current Campaigns</h2>
+        <div class="header-with-filter">
+            <h2>Current Campaigns</h2>
+            <div class="filters">
+                <select id="category-filter">
+                    <option value="all" selected>All</option>
+                    <option value="food">Food</option>
+                    <option value="beauty">Beauty</option>
+                </select>
+            </div>
+        </div>
+
         <section class="campaigns" id="campaigns"></section>
     </main>
 
