@@ -139,32 +139,44 @@ main {
 
 .header-with-filter {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%;
     margin-top: 2rem;
     position: relative;
-}
-
-.header-with-filter .filters {
-    position: absolute;
-    right: 0;
+    gap: 2rem;
 }
 
 .header-with-filter h2 {
     color: black;
     font-size: 2rem;
 }
-.campaigns {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 3rem 0rem;
+
+#search-bar {
+    padding: 0.5rem 6rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    background-color: #111827;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+#search-bar:hover {
+    background-color: #1f2937;
+}
+
+#search-bar:focus {
+    outline: 2px solid #111827;
+    outline-offset: 2px;
 }
 
 #category-filter {
+    position: absolute;
+    right: 0;
     padding: 0.5rem 2rem;
     font-size: 1rem;
     border-radius: 1rem;
@@ -183,6 +195,15 @@ main {
 #category-filter:focus {
     outline: 2px solid #111827;
     outline-offset: 2px;
+}
+
+.campaigns {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 0rem;
 }
 
 .card {
@@ -435,11 +456,21 @@ footer a {
 
     .header-with-filter {
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
     }
 
-    .header-with-filter .filters {
+    .filters {
+        display: flex;
+        justify-content:space-between;
+    }
+
+    #search-bar {
+        padding: 1rem;
+    }
+
+    #category-filter {
         position: relative;
+        padding: 0.5rem 1rem;
     }
 
     .card {
