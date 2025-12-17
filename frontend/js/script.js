@@ -32,15 +32,18 @@ let campaigns = [
         people: {current: 5, capacity: 8},
         timeLeft: 20722
     }
+
     ];
 
 const campaignsContainer = document.querySelector(".campaigns");
 
-let filterCampaigns = (category) => {
-    if(category === "all") {
-        return campaigns;
-    }
-    return campaigns.filter(campaign => campaign.category === category);
+const filterCampaigns = (category, searchQuery) => {
+    return campaigns.filter(campaign => {
+        const matchesCategory = category === "all" || campaign.category === category;
+        const matchesSearch = searchQuery === "" || campaign.title.toLowerCase().includes(searchQuery.toLowerCase());
+
+        return matchesCategory && matchesSearch;
+    })
 }
 
 function generateCard(campaign) {
@@ -82,12 +85,19 @@ const renderCampaigns = (campaignsArray) => {
 const categoryFilter = document.querySelector("#category-filter");
 
 categoryFilter.addEventListener('change', (e) => {
-    const filteredCampaigns = filterCampaigns(e.target.value);
+    const filteredCampaigns = filterCampaigns(e.target.value, searchBar.value);
     renderCampaigns(filteredCampaigns);
 });
 
 renderCampaigns(campaigns);
 
+
+const searchBar = document.querySelector("#search-bar");
+
+searchBar.addEventListener('input', (e) => {
+    const filteredCampaigns = filterCampaigns(categoryFilter.value, e.target.value);
+    renderCampaigns(filteredCampaigns);
+})
 
 //feat: Countdown Timer on cards
 
@@ -132,7 +142,7 @@ timeElement.forEach((e) => {
 
 let browseBtn = document.querySelector(".browseBtn");
 let browseNavBtn = document.querySelector("#browseNavBtn");
-let campaignsSection = document.querySelector("#campaigns");
+let campaignsSection = document.querySelector("#space-to-scroll");
 
 browseBtn.addEventListener("click", () => {
     campaignsSection.scrollIntoView({ behavior: 'smooth' });

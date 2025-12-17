@@ -461,16 +461,19 @@ footer a {
 
     .filters {
         display: flex;
-        justify-content:space-between;
+        width: 312px;
+        justify-content: space-between;
+        align-items: center;
     }
 
     #search-bar {
-        padding: 1rem;
+        padding: 0.5rem;
     }
 
     #category-filter {
         position: relative;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem;
+        right: auto;
     }
 
     .card {
