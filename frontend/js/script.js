@@ -1,5 +1,7 @@
 console.log("JS loaded");
 
+let activeTimers = [];
+
 //feat: Dynamic campaigns and filter categories
 
 let campaigns = [
@@ -161,6 +163,7 @@ function generateCard(campaign) {
 
 const renderCampaigns = (campaignsArray) => {
     campaignsContainer.innerHTML = campaignsArray.map(campaign => generateCard(campaign)).join('')
+    startTimers();
 }
 
 const categoryFilter = document.querySelector("#category-filter");
@@ -202,22 +205,26 @@ function secondsToTime(seconds) {
     return `${hours}:${minutes}:${remainingSeconds}`;
 }
 
-let timeElement = document.querySelectorAll(".card_time time");
+function startTimers(){
+    const timeElement = document.querySelectorAll(".card_time time");
 
-timeElement.forEach((e) => {
+    activeTimers.forEach(timerId => clearInterval(timerId));
+    activeTimers = [];
 
-    let totalSeconds = timetoSeconds(e.innerText);
+    timeElement.forEach((e) => {
+        let totalSeconds = timetoSeconds(e.innerText);
 
-    const timer = setInterval(() => {
-        if (totalSeconds > 0) {
-            totalSeconds--;
-            e.innerText = secondsToTime(totalSeconds);
-        } else {
-            clearInterval(timer);
-        }
-    }, 1000);
-
-})
+        const timer = setInterval(() => {
+            if (totalSeconds > 0) {
+                totalSeconds--;
+                e.innerText = secondsToTime(totalSeconds);
+            } else {
+                clearInterval(timer);
+            }
+        }, 1000);
+        activeTimers.push(timer);
+    });
+}
 
 //feat: Smooth scrolling on buttons
 
@@ -235,23 +242,22 @@ browseNavBtn.addEventListener("click", () => {
 
 //feat: Modal
 
-const modalButtons = document.querySelectorAll(".detailsBtn")
 const modal = document.querySelector(".modal")
 const modalCloseBtn = document.querySelector(".modal-closeBtn")
 const modalOverlay = document.querySelector(".modal-overlay")
 const modalBody = document.querySelector(".modal-body")
 
-modalButtons.forEach((e) => {
-    e.addEventListener("click", () => {
+campaignsContainer.addEventListener("click", (e) => {
+    const button = e.target.closest(".detailsBtn");
 
-        const actualCard = e.closest(".card")
+    if (button) {
+        const actualCard = button.closest(".card")
         const actualBody = actualCard.outerHTML
-
         modalBody.innerHTML = actualBody;
         const metaButtonContainer = modalBody.querySelector(".card_detailsBtn")
         metaButtonContainer.remove()
         modal.classList.remove("hidden")
-    })
+    }
 })
 
 modalCloseBtn.addEventListener("click", () => {
