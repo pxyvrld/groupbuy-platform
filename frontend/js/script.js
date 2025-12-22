@@ -1,6 +1,23 @@
 console.log("JS loaded");
 
+const campaignsContainer = document.querySelector(".campaigns");
+const categoryFilter = document.querySelector("#category-filter");
+const searchBar = document.querySelector("#search-bar");
+const sortFilter = document.querySelector("#sort-filter");
+const modal = document.querySelector(".modal")
+const modalCloseBtn = document.querySelector(".modal-closeBtn")
+const modalOverlay = document.querySelector(".modal-overlay")
+const modalBody = document.querySelector(".modal-body")
+const browseBtn = document.querySelector(".browseBtn");
+const browseNavBtn = document.querySelector("#browseNavBtn");
+const campaignsSection = document.querySelector("#space-to-scroll");
 let activeTimers = [];
+
+const savedFilters ={
+    category: localStorage.getItem("category") || "all",
+    searchQuery: localStorage.getItem("searchQuery") || "",
+    sortValue: localStorage.getItem("sortValue") || "default"
+};
 
 let campaigns = [
     {
@@ -118,10 +135,7 @@ let campaigns = [
 
 
 
-
 //feat: Dynamic campaigns, sort and filter categories
-
-const campaignsContainer = document.querySelector(".campaigns");
 
 const filterCampaigns = (category, searchQuery) => {
     return campaigns.filter(campaign => {
@@ -169,20 +183,14 @@ const renderCampaigns = (campaignsArray) => {
     startTimers();
 }
 
-const categoryFilter = document.querySelector("#category-filter");
-
 categoryFilter.addEventListener('change', updateCampaigns);
-
-renderCampaigns(campaigns);
-
-
-const searchBar = document.querySelector("#search-bar");
-
 searchBar.addEventListener('input', updateCampaigns)
-
-const sortFilter = document.querySelector("#sort-filter");
 sortFilter.addEventListener("change", updateCampaigns)
 
+categoryFilter.value = savedFilters.category;
+searchBar.value = savedFilters.searchQuery;
+sortFilter.value = savedFilters.sortValue;
+updateCampaigns();
 
 function updateCampaigns() {
     const category = categoryFilter.value;
@@ -212,17 +220,13 @@ function updateCampaigns() {
             break;
     }
     renderCampaigns(result);
+    localStorage.setItem("category", category);
+    localStorage.setItem("searchQuery", searchQuery);
+    localStorage.setItem("sortValue", sortValue);
 }
 
 
-
-
 //feat: Modal
-
-const modal = document.querySelector(".modal")
-const modalCloseBtn = document.querySelector(".modal-closeBtn")
-const modalOverlay = document.querySelector(".modal-overlay")
-const modalBody = document.querySelector(".modal-body")
 
 campaignsContainer.addEventListener("click", (e) => {
     const button = e.target.closest(".detailsBtn");
@@ -266,11 +270,6 @@ modalOverlay.addEventListener("click", (e) => {
         modal.classList.add("hidden")
     }
 })
-
-
-
-
-
 
 
 //feat: Countdown Timer on cards
@@ -317,17 +316,7 @@ function startTimers(){
 }
 
 
-
-
-
-
-
-
 //feat: Smooth scrolling on buttons
-
-let browseBtn = document.querySelector(".browseBtn");
-let browseNavBtn = document.querySelector("#browseNavBtn");
-let campaignsSection = document.querySelector("#space-to-scroll");
 
 browseBtn.addEventListener("click", () => {
     campaignsSection.scrollIntoView({ behavior: 'smooth' });
