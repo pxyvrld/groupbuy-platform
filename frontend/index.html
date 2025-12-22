@@ -36,6 +36,15 @@
             <h2>Current Campaigns</h2>
             <div class="filters">
                 <input type="search" name="search-bar" id="search-bar" placeholder="Search campaigns..." aria-label="Search campaigns">
+                
+                <select id="sort-filter">
+                    <option value="default">Sort by</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="people-high">People Joined: Most First</option>
+                    <option value="deadline-soon">Deadline: Ending Soon</option>
+                </select>
+                
                 <select id="category-filter">
                     <option value="all" selected>All</option>
                     <option value="food">Food</option>

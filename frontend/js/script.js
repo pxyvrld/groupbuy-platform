@@ -2,8 +2,6 @@ console.log("JS loaded");
 
 let activeTimers = [];
 
-//feat: Dynamic campaigns and filter categories
-
 let campaigns = [
     {
         id: 1,
@@ -118,6 +116,11 @@ let campaigns = [
     }
 ];
 
+
+
+
+//feat: Dynamic campaigns, sort and filter categories
+
 const campaignsContainer = document.querySelector(".campaigns");
 
 const filterCampaigns = (category, searchQuery) => {
@@ -132,7 +135,7 @@ const filterCampaigns = (category, searchQuery) => {
 function generateCard(campaign) {
     const progressPercent = ((campaign.people.current / campaign.people.capacity) * 100)
 
-    return `<article class="card card--${campaign.id}">
+    return `<article class="card" data-id="${campaign.id}">
                 <div class="card_img">
                     <img src="${campaign.image}" alt="${campaign.title} image">
                 </div>
@@ -168,20 +171,107 @@ const renderCampaigns = (campaignsArray) => {
 
 const categoryFilter = document.querySelector("#category-filter");
 
-categoryFilter.addEventListener('change', (e) => {
-    const filteredCampaigns = filterCampaigns(e.target.value, searchBar.value);
-    renderCampaigns(filteredCampaigns);
-});
+categoryFilter.addEventListener('change', updateCampaigns);
 
 renderCampaigns(campaigns);
 
 
 const searchBar = document.querySelector("#search-bar");
 
-searchBar.addEventListener('input', (e) => {
-    const filteredCampaigns = filterCampaigns(categoryFilter.value, e.target.value);
-    renderCampaigns(filteredCampaigns);
+searchBar.addEventListener('input', updateCampaigns)
+
+const sortFilter = document.querySelector("#sort-filter");
+sortFilter.addEventListener("change", updateCampaigns)
+
+
+function updateCampaigns() {
+    const category = categoryFilter.value;
+    const searchQuery = searchBar.value;
+    const sortValue = sortFilter.value;
+    const filteredCampaigns = filterCampaigns(category, searchQuery);
+    let result = filteredCampaigns;
+
+    switch (sortValue) {
+            case "price-low":
+            result = filteredCampaigns.sort((a, b) => a.price - b.price);
+            break;
+        
+        case "price-high":
+            result = filteredCampaigns.sort((a, b) => b.price - a.price);
+            break;
+        
+        case "people-high":
+            result = filteredCampaigns.sort((a, b) => b.people.current - a.people.current);
+            break;
+        
+        case "deadline-soon":
+            result = filteredCampaigns.sort((a, b) => a.timeLeft - b.timeLeft);
+            break;
+
+        default:
+            break;
+    }
+    renderCampaigns(result);
+}
+
+
+
+
+//feat: Modal
+
+const modal = document.querySelector(".modal")
+const modalCloseBtn = document.querySelector(".modal-closeBtn")
+const modalOverlay = document.querySelector(".modal-overlay")
+const modalBody = document.querySelector(".modal-body")
+
+campaignsContainer.addEventListener("click", (e) => {
+    const button = e.target.closest(".detailsBtn");
+
+    if (button) {
+        const actualCard = button.closest(".card")
+        const actualBody = actualCard.outerHTML
+        modalBody.innerHTML = actualBody;
+        const metaButtonContainer = modalBody.querySelector(".card_detailsBtn")
+        metaButtonContainer.remove()
+
+        //feat: join button
+        const campaignId = parseInt(actualCard.dataset.id);
+        const campaign = campaigns.find(c=> c.id === campaignId);
+        modalBody.firstChild.innerHTML += 
+        `<button class="joinBtn">Join Campaign ($${campaign.price})</button>
+        <p class="error-message hidden">Campaign is full!</p>`;
+
+        const errorMessage = modalBody.querySelector(".error-message");
+        const joinBtn = modalBody.querySelector('.joinBtn');
+        joinBtn.addEventListener('click', () => {
+            if ((campaign.people.current >= campaign.people.capacity)) {
+                errorMessage.classList.remove("hidden");
+                return;
+            }
+            campaign.people.current++;
+            renderCampaigns(campaigns);
+            modal.classList.add("hidden");
+        });
+
+        modal.classList.remove("hidden")
+    }
 })
+
+modalCloseBtn.addEventListener("click", () => {
+    modal.classList.add("hidden")
+})
+
+modalOverlay.addEventListener("click", (e) => {
+    if(e.target === modalOverlay) {
+        modal.classList.add("hidden")
+    }
+})
+
+
+
+
+
+
 
 //feat: Countdown Timer on cards
 
@@ -226,6 +316,13 @@ function startTimers(){
     });
 }
 
+
+
+
+
+
+
+
 //feat: Smooth scrolling on buttons
 
 let browseBtn = document.querySelector(".browseBtn");
@@ -239,33 +336,3 @@ browseBtn.addEventListener("click", () => {
 browseNavBtn.addEventListener("click", () => {
     campaignsSection.scrollIntoView({ behavior: 'smooth' });
 });
-
-//feat: Modal
-
-const modal = document.querySelector(".modal")
-const modalCloseBtn = document.querySelector(".modal-closeBtn")
-const modalOverlay = document.querySelector(".modal-overlay")
-const modalBody = document.querySelector(".modal-body")
-
-campaignsContainer.addEventListener("click", (e) => {
-    const button = e.target.closest(".detailsBtn");
-
-    if (button) {
-        const actualCard = button.closest(".card")
-        const actualBody = actualCard.outerHTML
-        modalBody.innerHTML = actualBody;
-        const metaButtonContainer = modalBody.querySelector(".card_detailsBtn")
-        metaButtonContainer.remove()
-        modal.classList.remove("hidden")
-    }
-})
-
-modalCloseBtn.addEventListener("click", () => {
-    modal.classList.add("hidden")
-})
-
-modalOverlay.addEventListener("click", (e) => {
-    if(e.target === modalOverlay) {
-        modal.classList.add("hidden")
-    }
-})

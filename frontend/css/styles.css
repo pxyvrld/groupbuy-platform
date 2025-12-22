@@ -9,6 +9,10 @@ body {
     background-color: #0d7e58
 }
 
+.hidden {
+    display: none;
+}
+
 nav {
     width: 100%;
     background-color: #111827;
@@ -153,8 +157,32 @@ main {
     font-size: 2rem;
 }
 
+#sort-filter {
+    position: absolute;
+    left: 0;
+    padding: 0.5rem 1rem;
+    width: 170px;
+    font-size: 1rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    background-color: #111827;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#sort-filter:hover {
+    background-color: #1f2937;
+}
+
+#sort-filter:focus {
+    outline: 2px solid #111827;
+    outline-offset: 2px;
+}
+
 #search-bar {
-    padding: 0.5rem 6rem;
+    padding: 0.5rem 4rem;
     border-radius: 1rem;
     font-size: 1rem;
     border: none;
@@ -177,7 +205,8 @@ main {
 #category-filter {
     position: absolute;
     right: 0;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
+    width: 170px;
     font-size: 1rem;
     border-radius: 1rem;
     border: none;
@@ -265,7 +294,7 @@ main {
     height: 1.5rem;
     border-radius: 1rem;
     box-shadow: 0 0 0 1px black;
-    animation: progressFill 1.5s ease-out forwards;
+    animation: progressFill 0.7s ease-out forwards;
 }
 
 @keyframes progressFill {
@@ -434,6 +463,24 @@ footer a {
     flex: 1;
 }
 
+.joinBtn {
+    background-color: #10B981;
+    font-weight: bold;
+    color: black;
+    font-size: 1rem;
+    border-color: #111827;
+    border-style: solid;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.joinBtn:hover {
+    background-color: #111827;
+    color: #10B981;
+}
+
 @media (max-width: 768px) {
 
     nav {
@@ -461,19 +508,30 @@ footer a {
 
     .filters {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
         width: 312px;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+    }
+
+    #sort-filter {
+        position: relative;
+        padding: 0.5rem;
+        width: 140px;
     }
 
     #search-bar {
         padding: 0.5rem;
+        width: 312px;
     }
 
     #category-filter {
         position: relative;
         padding: 0.5rem;
         right: auto;
+        width: 140px;
     }
 
     .card {
