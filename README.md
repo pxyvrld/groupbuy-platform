@@ -1,98 +1,180 @@
 # 🛒 GroupBuy Platform
 
-Full-stack platform for group buying - portfolio project for internship.
+> Full-stack crowdfunding platform for group purchases - portfolio project demonstrating progressive skill development from vanilla JavaScript to React + Spring Boot. 
 
-**Status:** ✅ Week 1 Complete | 🚧 Week 2 Starting
+**Current Status:** ✅ Week 2 Complete - Vanilla JavaScript Frontend | 🚧 Week 3 Starting - React Migration
+
+**Last updated:** December 22, 2025
 
 ---
 
 ## 🎯 About
 
-Platform for organizing group purchases to get better prices. The more people join a campaign, the lower the price per person.
+Platform for organizing group purchases to get better prices through collective buying power. 
 
-**Key Concept:** Price tiers based on participant count
-- 1-4 people: 50 PLN/person
-- 5-9 people: 40 PLN/person
-- 10+ people: 30 PLN/person
+**Core Concept:** Dynamic price tiers based on participant count
+- Example: Coffee beans (10kg)
+  - 1-4 people: 50 PLN/person
+  - 5-9 people: 40 PLN/person
+  - 10+ people: 30 PLN/person
 
----
-
-## 🚀 Tech Stack
-
-**Frontend:**
-- React, TypeScript
-- Material-UI (MUI), Tailwind CSS
-- RxJS (WebSocket management)
-
-**Backend:**
-- Java, Spring Boot
-- PostgreSQL + JPA/Hibernate
-- JWT Authentication
-- REST API
-
-**DevOps:**
-- Docker, Docker Compose
-
-**Real-time:**
-- WebSockets (live participant updates)
-- Spring Scheduler (automatic campaign closure)
+**Purpose:** Portfolio project showcasing progressive skill building - each week introduces new technologies (vanilla JS → React → Spring Boot → Docker).
 
 ---
 
-## 📋 Features (Planned)
+## ✨ Features (Current - Week 2: Vanilla JS)
 
-- ✅ Group buying campaigns with price tiers
-- ✅ Real-time participant updates (WebSocket)
-- ✅ JWT authentication & protected routes
-- ✅ Campaign management dashboard
-- ✅ Automatic campaign closure (scheduled tasks)
-- ✅ Responsive design (mobile-first)
+### Campaign Management
+- ✅ Dynamic rendering of 12 mock campaigns with real data
+- ✅ Campaign cards with images, pricing, animated progress bars
+- ✅ Live countdown timers (updates every second, persists across renders)
+
+### Filtering & Search
+- ✅ Category filter dropdown (Food, Beauty, Electronics, Sports, All)
+- ✅ Real-time search by campaign title (case-insensitive)
+- ✅ Multi-option sorting (price low/high, people joined, deadline soon)
+- ✅ Combined filters work together seamlessly
+
+### User Interaction
+- ✅ Modal system for detailed campaign view
+- ✅ Join campaign functionality with capacity validation
+- ✅ Error messages for full campaigns
+- ✅ Smooth scroll navigation (browse buttons)
+
+### Data & Performance
+- ✅ Async data fetching from local JSON file (Fetch API)
+- ✅ Loading states with user-friendly messages
+- ✅ Comprehensive error handling (network errors, HTTP 404/500)
+- ✅ LocalStorage persistence (filters survive page refresh)
 
 ---
 
-## 📐 Project Structure
+## 🛠️ Tech Stack
+
+### Current (Week 1-2)
+- **Frontend**:  Vanilla JavaScript (ES6+), HTML5, CSS3
+- **Layout**: Flexbox, CSS Grid
+- **Data**: Local JSON file (mock API)
+- **APIs**: Fetch API, LocalStorage API
+- **Async**: Promises, async/await, try/catch
+- **Animations**: CSS transitions, keyframe animations
+
+### Planned (Week 3+)
+- **Frontend**: React, TypeScript, Vite
+- **UI Libraries**: Material-UI (MUI), Tailwind CSS
+- **State Management**: React Hooks, Context API
+- **Routing**: React Router
+- **Real-time**: WebSockets, RxJS
+- **Backend**: Java, Spring Boot, PostgreSQL
+- **Auth**: JWT, Spring Security
+- **DevOps**: Docker, Docker Compose
+- **Testing**: JUnit, Mockito (backend), Jest (frontend)
+
+---
+
+## 📅 Project Timeline
+
+| Week | Focus | Status | Branch | Hours |
+|------|-------|--------|--------|-------|
+| **Week 0** | Setup & Wireframes | ✅ Done | - | ~5h |
+| **Week 1** | HTML/CSS Landing Page | ✅ Done | `week1/landing-page` | ~8h |
+| **Week 2** | JavaScript Functionality | ✅ Done | `week2/javascript-basics` | ~12-15h |
+| **Week 3** | React Migration | 🚧 Starting | `week3/react-migration` | TBD |
+| **Week 4+** | Spring Boot Backend | ⏳ Planned | - | TBD |
+
+**Total time invested:** ~25-28 hours
+
+**Start date:** November 7, 2025  
+**Target completion:** March/April 2026 (~5 months)
+
+---
+
+## 🌿 Branches
+
+This project uses **branch-per-week strategy** to showcase progressive development:
+
+- **`main`** - Current stable version (merged weekly progress)
+- **`week1/landing-page`** - Pure HTML/CSS landing page (no JavaScript)
+- **`week2/javascript-basics`** - Vanilla JS implementation ✅ **CURRENT**
+  - Features: filters, search, sorting, modals, API calls, localStorage
+- **`week3/react-migration`** - React refactor (coming soon)
+- *(more branches added as project progresses)*
+
+**For recruiters:** Check individual branches to see skill evolution from vanilla JavaScript through React to Spring Boot.
+
+---
+
+## 🚀 How to Run (Current Version)
+
+```bash
+# Clone repository
+git clone https://github.com/pxyvrld/groupbuy-platform.git
+
+# Navigate to project
+cd groupbuy-platform
+
+# Live Server (VS Code extension - recommended)
+# Right-click frontend/index.html → "Open with Live Server"
+```
+
+**Requirements:** Modern browser (Chrome, Firefox, Safari, Edge)
+
+---
+
+## 📂 Project Structure
 
 ```
-/docs
-  - progress.md       # Weekly progress tracker
-  - tech-stack.md     # Technology overview
-  - wireframes/       # UI mockups (Figma exports)
+groupbuy-platform/
+├── frontend/
+│   ├── index.html          # Main HTML file
+│   ├── css/
+│   │   └── styles.css      # All styles (~600 lines)
+│   ├── js/
+│   │   └── script.js       # Vanilla JS logic (~400 lines)
+│   ├── campaigns. json      # Mock campaign data (12 campaigns)
+│   └── assets/
+│       ├── images/         # Campaign images, logo
+│       └── icons/          # Favicon
+├── docs/
+│   ├── progress.md         # Weekly progress tracker
+│   ├── tech-stack.md       # Technology deep dive
+│   ├── wireframes/         # Figma mockups (5 screens)
+│   └── screenshots/        # Week 1 & 2 screenshots
+├── README.md               # This file
+├── LICENSE                 # MIT License
+└── . gitignore
 ```
 
 ---
 
-## 📖 Documentation
+## 🎓 Learning Goals
 
-- [📊 Progress Tracker](docs/progress.md) - Weekly milestones
-- [🛠️ Tech Stack](docs/tech-stack.md) - Technology deep dive
-- [🎨 Wireframes](docs/wireframes/) - UI mockups (5 screens)
+This project demonstrates progressive skill development for full-stack web development. 
 
----
+### Week 2 (Completed) - JavaScript Fundamentals: 
+- ✅ ES6+ syntax (arrow functions, destructuring, template literals)
+- ✅ DOM manipulation (querySelector, addEventListener, innerHTML)
+- ✅ Async programming (Promises, async/await, try/catch)
+- ✅ Fetch API (HTTP requests, response handling, JSON parsing)
+- ✅ LocalStorage API (data persistence across sessions)
+- ✅ Event handling (click, input, change, event delegation)
+- ✅ Array methods (filter, map, sort, find)
+- ✅ Error handling (network errors vs HTTP status codes)
+- ✅ Timers (setInterval, clearInterval, cleanup)
 
-## 🗓️ Timeline
+### Week 3 (Planned) - React:
+- 🔜 Component architecture & composition
+- 🔜 React Hooks (useState, useEffect, custom hooks)
+- 🔜 Props & state management
+- 🔜 React Router (client-side routing)
+- 🔜 TypeScript integration
 
-- **Start:** November 7, 2025
-- **Target:** March/April 2026 (~5 months)
-- **Current Phase:** Week 1 - HTML/CSS Basics
-
-**Progress:**
-- ✅ Week 0: Setup & Wireframes (Nov 7-8)
-- ✅ Week 1: HTML/CSS Landing Page (Nov 9-15)
-- 🚧 Week 2: JavaScript Basics (Nov 16-22)
-- ⏳ Week 3-4: Interactive Features
-- ⏳ Week 5-6: React + TypeScript
-- ⏳ Week 7-12: Spring Boot Backend
-- ⏳ Week 13-16: Integration & Real-time
-- ⏳ Week 17-20: Testing & Deployment
-
----
-
-## 👤 Author
-
-**pxyvrld** (Hubert Jucha)  
-Computer Science Student  
-Portfolio project | 2025  
-Target: Full-stack Java Developer internship
+### Week 4+ (Planned) - Backend:
+- 🔜 Spring Boot (REST API, controllers, services)
+- 🔜 PostgreSQL + JPA/Hibernate
+- 🔜 JWT authentication & Spring Security
+- 🔜 Repository/Service/Controller architecture
+- 🔜 Docker containerization
 
 ---
 
@@ -102,20 +184,97 @@ Target: Full-stack Java Developer internship
 
 **Desktop:**
 
-![Hero Section](docs/screenshots/week1/week1-desktop-hero.png)
-![Campaign Cards](docs/screenshots/week1/week1-desktop-cards.png)
+<table>
+  <tr>
+    <td><img src="docs/screenshots/week1/week1-desktop-hero.png" alt="Desktop Hero Section" width="400"/></td>
+    <td><img src="docs/screenshots/week1/week1-desktop-cards.png" alt="Desktop Campaign Cards" width="400"/></td>
+  </tr>
+</table>
 
 **Mobile:**
 
-![Mobile Hero](docs/screenshots/week1/week1-mobile-hero.png)
-![Mobile Cards](docs/screenshots/week1/week1-mobile-cards.png)
+<table>
+  <tr>
+    <td><img src="docs/screenshots/week1/week1-mobile-hero.png" alt="Mobile Hero" width="200"/></td>
+    <td><img src="docs/screenshots/week1/week1-mobile-cards.png" alt="Mobile Cards" width="200"/></td>
+  </tr>
+</table>
+
+### Week 2: Interactive Features (JavaScript)
+
+**Desktop:**
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/week2/week2-desktop-hero.png" alt="Desktop Hero" width="400"/></td>
+    <td><img src="docs/screenshots/week2/week2-desktop-filtered-campaigns.png" alt="Desktop Campaigns" width="400"/></td>
+    <td><img src="docs/screenshots/week2/week2-desktop-modal.png" alt="Desktop Modal" width="400"/></td>
+  </tr>
+</table>
+
+**Mobile:**
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/week2/week2-mobile-hero.png" alt="Mobile Hero" width="400"/></td>
+    <td><img src="docs/screenshots/week2/week2-mobile-filtered-campaigns.png" alt="Mobile Campaigns" width="400"/></td>
+    <td><img src="docs/screenshots/week2/week2-mobile-modal.png" alt="Mobile Modal" width="400"/></td>
+  </tr>
+</table>
 
 ---
 
-## 📝 License
+## 📝 Notes for Recruiters
 
-MIT License - Educational project, feel free to learn from it.
+This is a **learning project** showcasing progressive skill development: 
+
+**1. Branch-per-week structure** - Each branch represents a milestone: 
+   - `week1/landing-page` → Pure HTML/CSS (structure, layout, responsiveness)
+   - `week2/javascript-basics` → Vanilla JS (DOM, async, API calls)
+   - `week3/react-migration` → React refactor (components, hooks)
+   - Week 4+ → Spring Boot backend
+
+**2. Real-world patterns** - Even in vanilla JS: 
+   - Separation of concerns (filter/render/update functions)
+   - Error handling (try/catch, loading/error states)
+   - Data persistence (localStorage)
+   - Async programming (fetch, await, JSON parsing)
+
+**3. Professional practices:**
+   - Git workflow (feature branches, descriptive commits)
+   - Documentation (README, progress tracker, code comments)
+   - Accessibility (semantic HTML, ARIA labels)
+   - Responsive design (mobile-first approach, flexbox)
+
+**4. Problem-solving approach:**
+   - No tutorials copied - each feature built from scratch with mentor guidance
+   - Debugging skills (console logs, DevTools, error analysis)
+   - Refactoring (DRY principles, reusable functions)
+   - Testing (manual QA, edge case handling)
+
+**Time invested:** ~25-28 hours (Weeks 0-2)  
+**Target role:** Full-Stack Developer (Spring Boot + React)
 
 ---
 
-_Last updated: November 15, 2025, 01:11 UTC_
+## 👤 Author
+
+**pxyvrld** (Hubert Jucha)  
+Computer Science Student  
+📧 [hubertjucha21@gmail.com]  
+🔗 [LinkedIn](https://www.linkedin.com/in/hubert-jucha/)  
+🐙 [GitHub](https://github.com/pxyvrld)
+
+💼 Seeking:  Full-Stack Developer Internship
+
+---
+
+## 📄 License
+
+MIT License - Educational/portfolio project, free to learn from.
+
+See [LICENSE](LICENSE) file for details.
+
+---
+
+_Last updated: December 22, 2025, 03:27 UTC_
