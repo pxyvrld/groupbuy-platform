@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GroupBuy - Buy Together, Save more!</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
 </head>
 <body>
 
@@ -15,9 +15,9 @@
             <span>GroupBuy</span>
         </a>
         <ul class="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#campaigns">Browse</a></li>
-            <li><a href="#" id="loginBtn">Log in</a></li>
+            <li><button id="homeNavBtn">Home</button></li>
+            <li><button id="browseNavBtn">Browse</button></li>
+            <li><button id="loginBtn">Log in</button></li>
         </ul>
     </nav>
 
@@ -27,106 +27,56 @@
             <h1>Welcome to GroupBuy.</h1>
             <h2>Gather a group, buy cheaper. More people = lower price.</h2>
             <h2>Buy Together, Save more!</h2>
-            <a href="#campaigns" class="browseBtn">Start Browsing</a>
+            <button class="browseBtn">Start Browsing</button>
         </div>
     </header>
 
     <main>
-        <section class="campaigns" id="campaigns">
-
+        <div class="header-with-filter" id="space-to-scroll">
             <h2>Current Campaigns</h2>
+            <div class="filters">
+                <input type="search" name="search-bar" id="search-bar" placeholder="Search campaigns..." aria-label="Search campaigns">
+                
+                <select id="sort-filter">
+                    <option value="default">Sort by</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="people-high">People Joined: Most First</option>
+                    <option value="deadline-soon">Deadline: Ending Soon</option>
+                </select>
+                
+                <select id="category-filter">
+                    <option value="all" selected>All</option>
+                    <option value="food">Food</option>
+                    <option value="beauty">Beauty</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="sports">Sports</option>
+                </select>
+            </div>
+        </div>
 
-            <article class="card card--1">
-                <div class="card_img">
-                    <img src="assets/images/coffee.jpg" alt="Coffee beans image">
-                </div>
-                <div class="card_metaProgressContainer">
-                    <div class="card_meta">
-                        <h3>Coffee from Roastery (10kg)</h3>
-                        <span>30$ per person for a group of 10</span>
-                    </div>
-                    <div class="card_progressBar">
-                        <div class="progress"></div>
-                    </div>
-                </div>
-                <div class="card_timePeopleContainer">
-                    <div class="card_time">
-                        <img src="assets/images/timeicon.png" alt="Time Icon">
-                        <span>Remaining: <time class="remaining-time--1" aria-live="polite">18:32:14</time></span>
-                    </div>
-                    <div class="card_people_meter">
-                        <img src="assets/images/peopleicon.png" alt="People Icon">
-                        <span>7/10 people joined</span>
-                    </div>
-                </div>
-                <div class="card_detailsBtn">
-                    <a href="#" class="detailsBtn">></a>
-                </div>
-            </article>
-
-            <article class="card card--2">
-                <div class="card_img">
-                    <img src="assets/images/yerba.png" alt="Yerba Mate image">
-                </div>
-                <div class="card_metaProgressContainer">
-                    <div class="card_meta">
-                        <h3>Yerba Mate Premium (10kg)</h3>
-                        <span>50$ per person for a group of 10</span>
-                    </div>
-                    <div class="card_progressBar">
-                        <div class="progress"></div>
-                    </div>
-                </div>
-                <div class="card_timePeopleContainer">
-                    <div class="card_time">
-                        <img src="assets/images/timeicon.png" alt="Time Icon">
-                        <span>Remaining: <time class="remaining-time--2" aria-live="polite">12:15:09</time></span>
-                    </div>
-                    <div class="card_people_meter">
-                        <img src="assets/images/peopleicon.png" alt="People Icon">
-                        <span>9/10 people joined</span>
-                    </div>
-                </div>
-                <div class="card_detailsBtn">
-                    <a href="#" class="detailsBtn">></a>
-                </div>
-            </article>
-
-            <article class="card card--3">
-                <div class="card_img">
-                    <img src="assets/images/skincare.webp" alt="Skincare set image">
-                </div>
-                <div class="card_metaProgressContainer">
-                    <div class="card_meta">
-                        <h3>Organic Premium Skincare Set</h3>
-                        <span>40$ per person for a group of 8</span>
-                    </div>
-                    <div class="card_progressBar">
-                        <div class="progress"></div>
-                    </div>
-                </div>
-                <div class="card_timePeopleContainer">
-                    <div class="card_time">
-                        <img src="assets/images/timeicon.png" alt="Time Icon">
-                        <span>Remaining: <time class="remaining-time--3" aria-live="polite">05:45:22</time></span>
-                    </div>
-                    <div class="card_people_meter">
-                        <img src="assets/images/peopleicon.png" alt="People Icon">
-                        <span>5/8 people joined</span>
-                    </div>
-                </div>
-
-                <div class="card_detailsBtn">
-                    <a href="#" class="detailsBtn">></a>
-                </div>
-            </article>
-
-        </section>
+        <section class="campaigns" id="campaigns"></section>
     </main>
 
     <footer>
         <p>&copy; 2025 GroupBuy | <a href="https://github.com/pxyvrld" target="_blank"><strong>Hubert Jucha</strong></a></p>
     </footer>
+
+    <div class="modal hidden">
+        <div class="modal-overlay">
+            <div class="modal-content">
+
+                <button class="modal-closeBtn">X</button>
+                                
+                <div class="modal-body">
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
     
+    <script src="js/script.js"></script>
 </body>
 </html>
