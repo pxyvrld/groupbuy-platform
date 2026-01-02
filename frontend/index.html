@@ -1,82 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GroupBuy - Buy Together, Save more!</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/png" href="assets/icons/favicon.png">
-</head>
-<body>
-
-    <nav>
-        <a href="index.html" class="logoContainer">
-            <img src="assets/images/logo.png" alt="GroupBuy Logo - Go to homepage" id="logoImg">
-            <span>GroupBuy</span>
-        </a>
-        <ul class="navLinks">
-            <li><button id="homeNavBtn">Home</button></li>
-            <li><button id="browseNavBtn">Browse</button></li>
-            <li><button id="loginBtn">Log in</button></li>
-        </ul>
-    </nav>
-
-    <header>
-        <div class="hero">
-            <img src="assets/images/logo.png" alt="GroupBuy Hero Image" class="heroImg">
-            <h1>Welcome to GroupBuy.</h1>
-            <h2>Gather a group, buy cheaper. More people = lower price.</h2>
-            <h2>Buy Together, Save more!</h2>
-            <button class="browseBtn">Start Browsing</button>
-        </div>
-    </header>
-
-    <main>
-        <div class="header-with-filter" id="space-to-scroll">
-            <h2>Current Campaigns</h2>
-            <div class="filters">
-                <input type="search" name="search-bar" id="search-bar" placeholder="Search campaigns..." aria-label="Search campaigns">
-                
-                <select id="sort-filter">
-                    <option value="default">Sort by</option>
-                    <option value="price-low">Price: Low to High</option>
-                    <option value="price-high">Price: High to Low</option>
-                    <option value="people-high">People Joined: Most First</option>
-                    <option value="deadline-soon">Deadline: Ending Soon</option>
-                </select>
-                
-                <select id="category-filter">
-                    <option value="all" selected>All</option>
-                    <option value="food">Food</option>
-                    <option value="beauty">Beauty</option>
-                    <option value="electronics">Electronics</option>
-                    <option value="sports">Sports</option>
-                </select>
-            </div>
-        </div>
-
-        <section class="campaigns" id="campaigns"></section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 GroupBuy | <a href="https://github.com/pxyvrld" target="_blank"><strong>Hubert Jucha</strong></a></p>
-    </footer>
-
-    <div class="modal hidden">
-        <div class="modal-overlay">
-            <div class="modal-content">
-
-                <button class="modal-closeBtn">X</button>
-                                
-                <div class="modal-body">
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-    
-    <script src="js/script.js"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
