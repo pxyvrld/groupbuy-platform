@@ -14,9 +14,13 @@ function App() {
     <main>
       <Hero/>
       <section className="campaigns">
-        {campaigns.map(campaign => (
-          <CampaignCard key={campaign.id} campaign={campaign} />
-        ))}
+        <h1>Active Campaigns</h1>
+        <h2>Join a group purchase now and start saving. The more people join, the lower your price!</h2>
+        <div className='cardContainer'>
+          {campaigns.map(campaign => (
+            <CampaignCard key={campaign.id} campaign={campaign} />
+          ))}
+        </div>
       </section>
 
     </main>
