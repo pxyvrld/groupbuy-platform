@@ -1,0 +1,197 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+}
+
+.card_img_container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.card_img_container img {
+    height: 300px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card_time {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+    border-radius:  2rem;
+    background-color: var(--color-bg);
+    color: var(--color-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    min-width: fit-content;
+}
+
+.card_category {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    background-color: var(--color-bg);
+    color: var(--color-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+}
+
+.time_img {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.time_img img{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.card_metaProgressContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.card_meta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.card_meta h3 {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.card_people_meter {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.card_people_meter img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.card_progressBar {
+    background-color: #8e8f92;
+    height: 1.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 0 0 1px black;
+    overflow: hidden;
+}
+
+.progress {
+    background:  linear-gradient(90deg, var(--color-primary), #0d7e58);
+    height: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 0 1px black;
+    animation: progressFill 0.7s ease-out forwards;
+}
+
+.currentCapacityContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+@keyframes progressFill {
+    from {
+        width: 0%;
+    }
+}
+
+.price_button_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 2rem 2rem 2rem;
+    border-top: 1px solid #8e8f92;
+}
+
+.price_button_container span {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black;
+}
+
+.join_button {
+    background-color: #10B981;
+    font-weight: bold;
+    color: black;
+    font-size: 1rem;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.join_button:hover {
+    background-color: #0d7e58;
+    color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .card_category {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.75rem;
+    }
+
+    .card_time {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .time_img {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .card_metaProgressContainer {
+        padding: 0 1.5rem;
+    }
+
+    .price_button_container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .join_button {
+        width: 100%;
+    }
+}

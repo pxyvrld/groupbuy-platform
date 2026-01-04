@@ -1,6 +1,19 @@
 import GBLogo from '../assets/logo.png'
 
+import './styles/Hero.css'
+
 const Hero = () => {
+
+    const scrollToCampaigns = () => {
+        const campaignsSection = document.querySelector('.campaigns');
+        campaignsSection.scrollIntoView({behavior: 'smooth'});
+    }
+
+    const scrollToHowItWorks = () => {
+        const sectionHIT = document.querySelector('.howItWorks');
+        sectionHIT.scrollIntoView({behavior: 'smooth'});
+    }
+
   return (
     <section className="hero">
         <img src={GBLogo} alt="GroupBuy Hero Image" className="heroImg"/>
@@ -8,8 +21,12 @@ const Hero = () => {
         <h1>Shop Together, <span className='heroSpan'>Save more</span></h1>
         <h2>Join group purchasing campaigns and watch prices drop as more people join. The more we are, the less we pay!</h2>
         <div className='btnsContainer'>
-          <button className="browseBtn">Browse Campaigns</button>
-          <button className='howItWorksBtn'>How it Works</button>
+          <button className="browseBtn" onClick={scrollToCampaigns}>
+            Browse Campaigns
+          </button>
+          <button className='howItWorksBtn' onClick={scrollToHowItWorks}>
+            How it Works
+          </button>
         </div>
         <div className='examplePriceTiers'>
           <p>Example Price Tiers</p>

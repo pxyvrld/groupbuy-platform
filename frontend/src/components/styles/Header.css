@@ -1,0 +1,159 @@
+nav {
+    width: 100%;
+    background-color: #111827;
+    color: white;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logoContainer {
+    background-color: #10B981;
+    height: 3rem;
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    font-weight: bold;
+}
+
+nav ul li button {
+    background-color: #111827;
+    font-weight: bold;
+    color: white;
+    font-size: 1rem;
+    border-color: #10B981;
+    border-style: solid;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+nav ul li button:hover {
+    background-color: #10B981;
+    color: black;
+}
+
+#loginBtn {
+    background-color: #10B981;
+    color: black;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#loginBtn:hover {
+    background-color: #111827;
+    color: #10B981;
+}
+
+nav img {
+    height: 2.5rem;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.mobileMenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--color-dark);
+    z-index: 2000;
+    padding: 2rem;
+    transition: right 0.3s ease;
+    display: none;
+}
+
+.mobileMenu.open {
+    right: 0;
+}
+
+.mobileMenu .closeBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color:  var(--color-primary);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.mobileMenu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.mobileMenu ul li button {
+    background: none;
+    border: none;
+    color:  white;
+    font-size:  1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    width:  100%;
+    text-align: left;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0 1rem;
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .mobileMenu {
+        display:  block;
+    }
+}
