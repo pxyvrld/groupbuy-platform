@@ -1,0 +1,62 @@
+.howItWorks {
+  padding: 4rem 2rem;
+  background-color: var(--color-primary);
+  text-align: center;
+  border-radius: 3rem;
+  margin-bottom: 4rem;
+}
+
+.howItWorks h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.howItWorks p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.stepsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stepNumber {
+  background-color: var(--color-dark);
+  color: var(--color-primary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin:  0 auto 1rem;
+}
+
+.step h3 {
+  font-size: 1.5rem;
+  margin-bottom:  0.5rem;
+}
+
+.step p {
+  font-size: 1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .stepsContainer {
+    grid-template-columns: 1fr;
+  }
+}
