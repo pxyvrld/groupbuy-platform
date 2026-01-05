@@ -98,7 +98,7 @@ main {
         width: 140px;
     }
     
-    .cardContainer {
+    .cardsContainer {
         grid-template-columns: 1fr;
         padding: 0 3rem;
     }

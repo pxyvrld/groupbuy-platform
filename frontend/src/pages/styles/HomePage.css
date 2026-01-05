@@ -1,0 +1,13 @@
+.campaigns h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.campaigns h2 {
+    color: black;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    padding: 1rem;
+}

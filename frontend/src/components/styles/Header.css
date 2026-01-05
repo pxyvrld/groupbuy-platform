@@ -34,7 +34,12 @@ nav ul {
     font-weight: bold;
 }
 
-nav ul li button {
+nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a ,nav ul li button {
     background-color: #111827;
     font-weight: bold;
     color: white;
@@ -45,9 +50,11 @@ nav ul li button {
     padding: 0.5rem 1rem;
     transition: background-color 0.3s, color 0.3s;
     cursor: pointer;
+    text-decoration: none;
+    height: 40px;
 }
 
-nav ul li button:hover {
+nav ul li button:hover, nav ul li a:hover {
     background-color: #10B981;
     color: black;
 }
@@ -127,17 +134,39 @@ nav img {
     margin-top: 3rem;
 }
 
-.mobileMenu ul li button {
+.mobileMenu ul li button, .mobileMenu ul li a {
+    display: flex;
+    align-items: center;
     background: none;
-    border: none;
     color:  white;
     font-size:  1.2rem;
     font-weight: bold;
     cursor: pointer;
-    width:  100%;
+    width:  auto;
     text-align: left;
-    padding: 0.5rem 0;
+    padding: 0.5rem 1;
     transition: color 0.3s;
+}
+
+.mobileMenu #loginBtn {
+    border: none;
+    color:  var(--color-dark);
+    font-size:  1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    width:  auto;
+    text-align: left;
+    padding: 0.5rem 1;
+    transition: color 0.3s;
+    background-color: #10B981;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.mobileMenu #loginBtn:hover {
+    color:  white;
+    background-color: #111827;
+    border-style: solid;
+    border-color: #10B981;
 }
 
 @media (max-width: 768px) {

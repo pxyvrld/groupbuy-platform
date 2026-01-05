@@ -2,6 +2,7 @@ import Hero from '../components/Hero'
 import CampaignCard from '../components/CampaignCard'
 import HowItWorks from '../components/HowItWorks'
 import {campaigns} from '../data/campaigns';
+import './styles/HomePage.css';
 
 const HomePage = () => {
 

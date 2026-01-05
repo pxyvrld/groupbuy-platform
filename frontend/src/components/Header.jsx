@@ -1,14 +1,13 @@
 import GBLogo from '../assets/logo.png'
 import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 import './styles/Header.css'
 
 const Header = () => {
 
-    const scrollToCampaigns = () => {
-        const campaignsSection = document.querySelector('.campaigns');
-        campaignsSection.scrollIntoView({behavior: 'smooth'});
-    }
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
 
     const scrollToHowItWorks = () => {
         const sectionHIT = document.querySelector('.howItWorks');
@@ -24,10 +23,10 @@ const Header = () => {
     return (
         <header>
             <nav>
-                <a href="#" className="logoContainer">
+                <Link to='/' className="logoContainer">
                     <img src={GBLogo} alt="GroupBuy Logo - Go to homepage" id="logoImg"/>
                     <span>GroupBuy</span>
-                </a>
+                </Link>
 
                 <button 
                     className="hamburger" 
@@ -40,27 +39,35 @@ const Header = () => {
                 </button>
 
                 <ul className="navLinks">
-                    <li><button id='homeNavBtn' onClick={scrollToCampaigns}>
+                    <li><Link to='/campaigns'>
                         Campaigns
-                        </button>
-                    </li>
-                    <li><button id='browseNavBtn' onClick={scrollToHowItWorks}>
-                        How it Works
-                        </button>
+                        </Link>
                     </li>
 
-                    <li><button id='loginBtn'>Log In</button></li>
-                    <li><button id='signupBtn'>Sign Up</button></li>
+                    {isHomePage && (
+                        <li><button id='browseNavBtn' onClick={scrollToHowItWorks}>
+                            How it Works
+                            </button>
+                        </li>
+                    )}
+
+
+                    <li><Link to='/login' id='loginBtn'>Log In</Link></li>
+                    <li><Link to='/signup'>Sign Up</Link></li>
 
                 </ul>
 
                 <div className={`mobileMenu ${isMenuOpen ? 'open' : ''}`}>
                     <button className="closeBtn" onClick={toggleMenu}>X</button>
                     <ul>
-                        <li><button onClick={() => { scrollToCampaigns(); toggleMenu(); }}>Campaigns</button></li>
-                        <li><button onClick={() => { scrollToHowItWorks(); toggleMenu(); }}>How It Works</button></li>
-                        <li><button>Log In</button></li>
-                        <li><button>Sign Up</button></li>
+                        <li><Link to='/campaigns' onClick={toggleMenu}>Campaigns</Link></li>
+                        
+                        {isHomePage && (
+                            <li><button onClick={() => { scrollToHowItWorks(); toggleMenu(); }}>How It Works</button></li>
+                        )} 
+                        
+                        <li><Link to='/login' id='loginBtn' onClick={toggleMenu}>Log In</Link></li>
+                        <li><Link to='/signup' onClick={toggleMenu}>Sign Up</Link></li>
                     </ul>
                 </div>
 
