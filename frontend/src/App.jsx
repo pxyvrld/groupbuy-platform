@@ -1,69 +1,37 @@
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Filters from './components/Filters'
-import CampaignCard from './components/CampaignCard'
-import HowItWorks from './components/HowItWorks'
-import Footer from './components/Footer'
-import { campaigns } from './data/campaigns'
-
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import CampaignsPage from './pages/CampaignsPage';
+import CampaignDetailsPage from './pages/CampaignDetailsPage';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
+import DashboardPage from './pages/DashboardPage';
+import CreateCampaignPage from './pages/CreateCampaignPage';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 import './App.css'
 
 
 function App() {
   
-    const [searchTerm, setSearchTerm] = useState("");
-    const [selectedCategory, setSelectedCategory] = useState("all");
-    const [selectedSort, setSelectedSort] = useState("default");
-
-    const filterCampaigns = (searchTerm, selectedCategory) => {
-        return campaigns.filter(campaign => {
-        const matchesCategory = selectedCategory === "all" || campaign.category === selectedCategory;
-        const matchesSearch = searchTerm === "" || campaign.title.toLowerCase().includes(searchTerm.toLowerCase());
-
-        return matchesCategory && matchesSearch;
-        })
-    }
-
-    const filteredCampaigns = filterCampaigns(searchTerm,selectedCategory);
-
-    const sortedCampaigns = [...filteredCampaigns].sort((a, b) => {
-        if (selectedSort === "price-asc") return a.price - b.price;
-        if (selectedSort === "price-desc") return b.price - a.price;
-        if (selectedSort === "time") return a.timeLeft - b.timeLeft;
-        if (selectedSort === "popular") return b.people.current - a.people.current;
-        return 0;
-    });
-
   return (
-    <>
-      <Header/>
-      <main>
-        <Hero/>
-        
-        <section className="campaigns">
+    <BrowserRouter>
+      <div className="app">
+        <Header/>
 
-          <Filters
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-            selectedSort={selectedSort}
-            setSelectedSort={setSelectedSort}
-          />
-          <div className='cardContainer'>
-            {sortedCampaigns.map(campaign => (
-              <CampaignCard key={campaign.id} campaign={campaign} />
-            ))}
-          </div>
+        <Routes>
+          <Route path='/' element={<HomePage/>}/>
+          <Route path='/campaigns' element={<CampaignsPage/>}/>
+          <Route path='/campaign/:id' element={<CampaignDetailsPage/>}/>
+          <Route path='/login' element={<LoginPage/>}/>
+          <Route path='/signup' element={<SignUpPage/>}/>
+          <Route path='/dashboard' element={<DashboardPage/>}/>
+          <Route path='/create' element={<CreateCampaignPage/>}/>
+        </Routes>
 
-        </section>
-
-        <HowItWorks/>
-      </main>
-      <Footer/>
-    </>
+        <Footer/>
+      </div>
+    </BrowserRouter>
   )
 }
 
