@@ -2,9 +2,9 @@
 
 > Full-stack crowdfunding platform for group purchases - portfolio project demonstrating progressive skill development from vanilla JavaScript to React + Spring Boot. 
 
-**Current Status:** ✅ Week 2 Complete - Vanilla JavaScript Frontend | 🚧 Week 3 Starting - React Migration
+**Current Status:** ✅ Week 3 Complete - React Migration + UI Improvements | 🚧 Week 4 Starting - React Router + Pages
 
-**Last updated:** December 22, 2025
+**Last updated:** January 4, 2026
 
 ---
 
@@ -22,41 +22,46 @@ Platform for organizing group purchases to get better prices through collective 
 
 ---
 
-## ✨ Features (Current - Week 2: Vanilla JS)
+## ✨ Features (Current - Week 3: React)
+
+### React Core
+- ✅ Component-based architecture (Header, Hero, Filters, CampaignCard, Footer, HowItWorks)
+- ✅ State management with `useState` (search, filters, sort, countdown timers)
+- ✅ Side effects with `useEffect` (per-card countdown timers with cleanup)
+- ✅ Props drilling and lifting state up
+- ✅ Controlled form inputs
 
 ### Campaign Management
-- ✅ Dynamic rendering of 12 mock campaigns with real data
-- ✅ Campaign cards with images, pricing, animated progress bars
-- ✅ Live countdown timers (updates every second, persists across renders)
+- ✅ Dynamic rendering of 12 campaigns with React components
+- ✅ Campaign cards with animated progress bars
+- ✅ Live countdown timers (updates every second, cleanup on unmount)
 
 ### Filtering & Search
-- ✅ Category filter dropdown (Food, Beauty, Electronics, Sports, All)
-- ✅ Real-time search by campaign title (case-insensitive)
-- ✅ Multi-option sorting (price low/high, people joined, deadline soon)
-- ✅ Combined filters work together seamlessly
+- ✅ Category filter (Food, Beauty, Electronics, Sports, All)
+- ✅ Real-time search by campaign title
+- ✅ Multi-option sorting (price, people joined, deadline)
+- ✅ Combined filters work seamlessly
 
-### User Interaction
-- ✅ Modal system for detailed campaign view
-- ✅ Join campaign functionality with capacity validation
-- ✅ Error messages for full campaigns
-- ✅ Smooth scroll navigation (browse buttons)
-
-### Data & Performance
-- ✅ Async data fetching from local JSON file (Fetch API)
-- ✅ Loading states with user-friendly messages
-- ✅ Comprehensive error handling (network errors, HTTP 404/500)
-- ✅ LocalStorage persistence (filters survive page refresh)
+### UI/UX Improvements (Week 3)
+- ✅ Responsive hamburger menu with slide-in animation
+- ✅ "How It Works" section (3-step guide)
+- ✅ Improved card badges (auto-sizing, no text wrapping)
+- ✅ Grid layout (2 cols desktop, 1 col mobile)
+- ✅ Smooth scroll navigation
+- ✅ Card hover effects
+- ✅ Fixed Hero height on mobile (calc(100vh - 4rem))
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Current (Week 1-2)
-- **Frontend**:  Vanilla JavaScript (ES6+), HTML5, CSS3
+### Current (Week 1-3)
+- **Frontend**:  React, JavaScript (ES6+), HTML5, CSS3
+- **Build Tool**: Vite
+- **State Management**: React Hooks (useState, useEffect)
 - **Layout**: Flexbox, CSS Grid
-- **Data**: Local JSON file (mock API)
-- **APIs**: Fetch API, LocalStorage API
-- **Async**: Promises, async/await, try/catch
+- **Styling**: CSS Modules, CSS Variables
+- **Data**: Local mock data (campaigns. js)
 - **Animations**: CSS transitions, keyframe animations
 
 ### Planned (Week 3+)
@@ -79,7 +84,7 @@ Platform for organizing group purchases to get better prices through collective 
 | **Week 0** | Setup & Wireframes | ✅ Done | - | ~5h |
 | **Week 1** | HTML/CSS Landing Page | ✅ Done | `week1/landing-page` | ~8h |
 | **Week 2** | JavaScript Functionality | ✅ Done | `week2/javascript-basics` | ~12-15h |
-| **Week 3** | React Migration | 🚧 Starting | `week3/react-migration` | TBD |
+| **Week 3** | React Migration + UI | ✅ Done | `week3/react-migration` | ~15-20h |
 | **Week 4+** | Spring Boot Backend | ⏳ Planned | - | TBD |
 
 **Total time invested:** ~25-28 hours

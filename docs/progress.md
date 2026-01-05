@@ -203,3 +203,137 @@
 - Następny projekt: mobile-first (`min-width` zamiast `max-width`)
 - Hamburger menu na mobile (Week 3 - JavaScript)
 - Następny krok: React setup (Vite) → przepisanie logiki do React components
+
+## 📅 TYDZIEŃ 3: React Migration + UI Improvements (23 grudnia 2025 - 4 stycznia 2026)
+
+### Cele:
+- Migracja vanilla JavaScript → React
+- Setup Vite + React project
+- Komponenty (Header, Hero, Filters, CampaignCard, Footer)
+- useState + useEffect hooks
+- Props drilling + lifting state up
+- Responsive hamburger menu
+- "How It Works" sekcja
+- CSS refactor (modular, CSS variables)
+
+### Zrobione: 
+
+**React Core:**
+- ✅ **Vite setup** - `npm create vite@latest` (React template)
+- ✅ **Component architecture** - 6 komponentów: 
+  - `Header. jsx` - navbar z hamburger menu
+  - `Hero.jsx` - hero section z Browse Campaigns button
+  - `Filters.jsx` - search bar + 2x select (category, sort)
+  - `CampaignCard.jsx` - pojedyncza karta kampanii
+  - `Footer.jsx` - footer z linkami
+  - `HowItWorks.jsx` - 3-step guide
+- ✅ **useState hooks** (4x):
+  - `searchTerm` - search bar input
+  - `selectedCategory` - category filter
+  - `selectedSort` - sort dropdown
+  - `timeRemaining` - countdown timer (per card)
+- ✅ **useEffect hook** - countdown timers
+  - Jeden `useEffect` per karta (dependency:  `timeRemaining`)
+  - Cleanup function (`return () => clearInterval(timer)`)
+  - Funkcjonalne update (`setTimeRemaining(prev => prev - 1)`)
+- ✅ **Props drilling** - lifting state up: 
+  - App. jsx → Filters (search/category/sort state)
+  - Filters → App. jsx (setState callbacks)
+  - App.jsx → CampaignCard (campaign data)
+- ✅ **Controlled inputs** - `value` + `onChange` (search, selects)
+
+**UI/UX Improvements:**
+- ✅ **CSS refactor**:
+  - Osobne pliki CSS per komponent (`components/styles/`)
+  - CSS Variables (`:root` - colors, spacing)
+  - Modular approach (component-scoped styles)
+- ✅ **Responsive hamburger menu**:
+  - 3 paski (`.hamburger` button)
+  - Slide-in animation z prawej (`right: -100%` → `right: 0`)
+  - Overlay (ciemne tło `rgba(0,0,0,0.6)`)
+  - `useState` toggle (`isMenuOpen`)
+  - Close on link click + overlay click
+- ✅ **"How It Works" sekcja**:
+  - 3 steps (Browse, Join, Save)
+  - Grid layout (3 cols desktop, 1 col mobile)
+  - Step numbers w kółkach (`border-radius: 50%`)
+- ✅ **Card badges improvements**:
+  - Category badge (lewy górny róg)
+  - Time badge (prawy górny róg)
+  - `min-width: fit-content` (auto-sizing, no fixed width)
+  - `white-space: nowrap` (tekst w 1 linii, nie łamie się)
+  - `box-shadow` (depth effect)
+- ✅ **Grid layout**:
+  - Desktop: `grid-template-columns: repeat(2, 1fr)` (2 kolumny)
+  - Mobile: `grid-template-columns: 1fr` (1 kolumna)
+  - Breakpoint: `768px`
+- ✅ **Smooth scroll navigation**:
+  - Browse Campaigns button → `.campaigns` section
+  - How It Works button → `#how-it-works` section
+  - `scrollIntoView({ behavior: 'smooth' })`
+- ✅ **Hero height fix**:
+  - Desktop: `height: calc(100vh - 4rem)` (100vh minus navbar)
+  - Mobile: `min-height: calc(100vh - 4rem)` (dopasowuje się do contentu)
+  - Rozwiązuje problem "latania" przy zmianie orientacji telefonu
+
+**Code Quality:**
+- ✅ Semantic HTML (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`)
+- ✅ Accessibility (`aria-label`, `aria-live="polite"` dla timerów)
+- ✅ Reusable components (DRY principle)
+- ✅ Clean file structure (`src/components/`, `src/data/`)
+
+### Nauka (koncepty):
+
+**React Fundamentals:**
+- **Components** - budowanie UI z małych, reużywalnych części
+- **JSX** - JavaScript XML (HTML w JS z `{}` dla expressions)
+- **Props** - przekazywanie danych parent → child (read-only)
+- **State** - dane które się zmieniają (re-render jak zmiana)
+- **Lifting state up** - state w parent, callback functions do child
+
+**React Hooks:**
+- **useState** - `const [state, setState] = useState(initialValue)`
+  - Zwraca array:  [current value, setter function]
+  - Re-render component jak setState wywołane
+- **useEffect** - side effects (timers, API calls, subscriptions)
+  - `useEffect(() => { /* effect */ }, [dependencies])`
+  - Dependency array: `[]` = run once, `[value]` = run when value changes
+  - Cleanup function: `return () => { /* cleanup */ }` (unmount/before next effect)
+- **Functional updates** - `setState(prev => prev + 1)` (bezpieczne z async)
+
+**Event Handling:**
+- `onClick`, `onChange`, `onInput` (camelCase w React!)
+- Event handlers jako arrow functions:  `onClick={() => fn()}`
+- Passing callbacks jako props: `<Child onUpdate={handleUpdate} />`
+
+**Conditional Rendering:**
+- `{isOpen && <div>...</div>}` (render only if true)
+- `{isOpen ?  <A /> : <B />}` (ternary operator)
+- `className={`base ${isActive ? 'active' : ''}`}` (dynamic classes)
+
+**Lists & Keys:**
+- `.map()` do renderowania list:  `{campaigns.map(c => <Card key={c.id} />)}`
+- **key prop** - unikalne ID (pomaga React zoptymalizować re-renders)
+
+**CSS in React:**
+- `className` (nie `class`!)
+- Inline styles:  `style={{width: `${percent}%`}}` (object notation)
+- CSS Modules (scoped styles, unikalne nazwy klas)
+- CSS Variables (`:root` - globalne kolory/spacing)
+
+**Project Structure:**
+- `src/components/` - wszystkie komponenty
+- `src/components/styles/` - CSS per komponent
+- `src/data/` - mock data
+- `public/assets/` - static files (images, icons)
+
+### Screenshots: 
+_(TODO: dodaj screenshoty Week 3 - React version)_
+
+**Status:** ✅ ZAKOŃCZONY (4 stycznia 2026, ~19:00 UTC)
+
+### Notatki:
+- Repo:  https://github.com/pxyvrld/groupbuy-platform
+- PR: Week 3: React Migration + UI Improvements (week3 → main)
+- Następny krok: Week 4 - React Router + Pages (7 stron, routing, protected routes)
+- Czas: ~15-20h (split: ~10h React migration, ~5-10h UI improvements)

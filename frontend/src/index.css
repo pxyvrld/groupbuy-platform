@@ -1,0 +1,15 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+:root {
+  --color-primary:  #10B981;
+  --color-dark: #111827;
+}
