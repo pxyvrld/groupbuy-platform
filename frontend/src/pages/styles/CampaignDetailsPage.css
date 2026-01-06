@@ -1,0 +1,10 @@
+.campaignDetailsContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.campaign-hero {
+    display: flex;
+    gap: 1rem;
+}
