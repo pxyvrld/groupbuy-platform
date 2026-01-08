@@ -1,34 +1,13 @@
-:root {
-
-    /* Colors */
-    --color-primary: #10B981;
-    --color-dark: #111827;
-    --color-bg: #0d7e58;
-    --color-accent: #1b7692;
-
-}
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-body {
-    background-color: #0d7e58;
-}
-
 .hidden {
     display: none;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display:  flex;
+    flex-direction:  column;
+    align-items:  center;
     width: 100%;
+    flex: 1;
 }
 
 .campaigns {
@@ -37,19 +16,18 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap:  1rem;
 }
 
 .cardsContainer {
-    width: 100%;
+    width:  100%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 2rem;
     padding: 1rem 14rem;
 }
 
-@media (max-width: 768px) {
-
+@media (max-width:  768px) {
     nav {
         align-items: center;
         justify-content: center;

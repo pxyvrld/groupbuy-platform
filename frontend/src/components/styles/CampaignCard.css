@@ -14,6 +14,15 @@
     transform: translateY(-8px);
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .card_img_container {
     position: relative;
     height: 300px;
@@ -163,6 +172,80 @@
     background-color: #0d7e58;
     color: white;
     transform: translateY(-2px);
+}
+
+/* Price Tiers in Card */
+.card_price_tiers {
+    width: 100%;
+    padding: 1rem;
+    margin:  0;
+    border-top: 1px solid #E5E7EB;
+}
+
+.card_price_tiers h4 {
+    margin:  0 0 0.75rem 0;
+    font-size: 0.95rem;
+    color: #374151;
+    font-weight: 600;
+}
+
+.card_price_tiers ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card_price_tiers li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0. 75rem;
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius:  6px;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.card_price_tiers li.active {
+    background: #DBEAFE;
+    border-color: #3B82F6;
+    font-weight: 600;
+}
+
+.card_price_tiers .tier-range {
+    color: #6B7280;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+}
+
+.card_price_tiers li.active .tier-range {
+    color: #1E40AF;
+}
+
+.card_price_tiers .tier-price {
+    color: #10B981;
+    font-weight: 600;
+}
+
+.card_price_tiers li.active .tier-price {
+    color: #3B82F6;
+}
+
+.card_price_tiers .tier-badge {
+    margin-left: 0.5rem;
+    color: #3B82F6;
+    font-size: 1rem;
+}
+
+.card_price_tiers .tier-price-container {
+    display: flex;
+    align-items: center;
+    gap:  0.5rem;
+    padding-right: 0.5rem;
 }
 
 @media (max-width: 768px) {

@@ -12,7 +12,7 @@ const CampaignsPage = () => {
 
     const filterCampaigns = (searchTerm, selectedCategory) => {
         return campaigns.filter(campaign => {
-        const matchesCategory = selectedCategory === "all" || campaign.category === selectedCategory;
+        const matchesCategory = selectedCategory === "all" || campaign.category.id === selectedCategory;
         const matchesSearch = searchTerm === "" || campaign.title.toLowerCase().includes(searchTerm.toLowerCase());
 
         return matchesCategory && matchesSearch;
@@ -22,9 +22,13 @@ const CampaignsPage = () => {
     const filteredCampaigns = filterCampaigns(searchTerm,selectedCategory);
 
     const sortedCampaigns = [...filteredCampaigns].sort((a, b) => {
-        if (selectedSort === "price-asc") return a.price - b.price;
-        if (selectedSort === "price-desc") return b.price - a.price;
-        if (selectedSort === "time") return a.timeLeft - b.timeLeft;
+        if (selectedSort === "price-asc") return a.pricing.currentPrice - b.pricing.currentPrice;
+        if (selectedSort === "price-desc") return b.pricing.currentPrice - a.pricing.currentPrice;
+        if (selectedSort === "time") {
+          const timeA = new Date(a.deadline).getTime() - new Date().getTime();
+          const timeB = new Date(b.deadline).getTime() - new Date().getTime();
+          return timeA - timeB;
+        }
         if (selectedSort === "popular") return b.people.current - a.people.current;
         return 0;
     });
