@@ -257,7 +257,7 @@ This is a **learning project** showcasing progressive skill development:
    - Refactoring (DRY principles, reusable functions)
    - Testing (manual QA, edge case handling)
 
-**Time invested:** ~25-28 hours (Weeks 0-2)  
+**Time invested:** ~25-29 hours (Weeks 0-2)  
 **Target role:** Full-Stack Developer (Spring Boot + React)
 
 ---
