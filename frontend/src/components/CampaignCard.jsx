@@ -67,7 +67,7 @@ const CampaignCard = ({ campaign }) => {
                     <div className="card_metaProgressContainer">
                         <div className="card_meta">
                             <h3>{campaign.title}</h3>
-                            <span>{campaign.pricing.currentPrice} PLN per person for a group of {campaign.people.capacity}</span>
+                            <span>{campaign.pricing.tiers[2].pricePerPerson} PLN per person for a group of {campaign.people.capacity}</span>
                         </div>
                         <div className="card_people_meter">
                             <img src={PeopleIcon} alt="People Icon" />

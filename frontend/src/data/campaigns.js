@@ -16,23 +16,23 @@ export const campaigns = [
     id: 1,
     title: "Premium Coffee Beans from Local Roastery",
     slug: "premium-coffee-beans-10kg",
-    description: "High-quality Arabica coffee beans from local roastery.  Perfect for coffee lovers who want premium taste at wholesale prices.",
+    description: "High-quality Arabica coffee beans from local roastery. Perfect for coffee lovers who want premium taste at wholesale prices.",
     image: CoffeeImg,
     
     category: {
-      id:  "food",
+      id: "food",
       name: "Food & Drinks",
       icon: "🍔",
       color: "#10B981"
     },
     
-    pricing:  {
+    pricing: {
       currency: "PLN",
       basePrice: 50,
-      currentPrice: 30,
+      currentPrice: 35,
       tiers: [
         { min: 1, max: 4, pricePerPerson: 50 },
-        { min: 5, max:  9, pricePerPerson: 35 },
+        { min: 5, max: 9, pricePerPerson: 35 },
         { min: 10, max: null, pricePerPerson: 30 }
       ]
     },
@@ -72,18 +72,18 @@ export const campaigns = [
     pricing: {
       currency: "PLN",
       basePrice: 80,
-      currentPrice: 50,
+      currentPrice: 60,
       tiers: [
         { min: 1, max: 4, pricePerPerson: 80 },
-        { min: 5, max:  9, pricePerPerson: 60 },
+        { min: 5, max: 9, pricePerPerson: 60 },
         { min: 10, max: null, pricePerPerson: 50 }
       ]
     },
     
     people: {
       current: 9,
-      capacity:  10,
-      minRequired:  5
+      capacity: 10,
+      minRequired: 5
     },
     
     deadline: "2026-01-18T23:59:59Z",
@@ -99,13 +99,13 @@ export const campaigns = [
   },
   
   {
-    id:  3,
+    id: 3,
     title: "Organic Wildflower Honey from Local Beekeepers",
     slug: "organic-wildflower-honey-5kg",
     description: "Raw organic wildflower honey from local beekeepers. 100% natural, unprocessed, and packed with nutrients.",
     image: HoneyImg,
     
-    category:  {
+    category: {
       id: "food",
       name: "Food & Drinks",
       icon: "🍔",
@@ -115,11 +115,11 @@ export const campaigns = [
     pricing: {
       currency: "PLN",
       basePrice: 40,
-      currentPrice: 25,
+      currentPrice: 30,
       tiers: [
         { min: 1, max: 3, pricePerPerson: 40 },
-        { min:  4, max: 7, pricePerPerson: 30 },
-        { min:  8, max: null, pricePerPerson: 25 }
+        { min: 4, max: 7, pricePerPerson: 30 },
+        { min: 8, max: null, pricePerPerson: 25 }
       ]
     },
     
@@ -142,34 +142,34 @@ export const campaigns = [
   },
   
   {
-    id:  4,
+    id: 4,
     title: "Extra Virgin Olive Oil from Greece",
     slug: "extra-virgin-olive-oil-10l",
     description: "Premium extra virgin olive oil imported directly from Greece. Cold-pressed, rich flavor, perfect for cooking and salads.",
     image: OliveOilImg,
     
     category: {
-      id:  "food",
+      id: "food",
       name: "Food & Drinks",
       icon: "🍔",
       color: "#10B981"
     },
     
-    pricing:  {
+    pricing: {
       currency: "PLN",
       basePrice: 70,
-      currentPrice: 45,
+      currentPrice: 55,
       tiers: [
         { min: 1, max: 5, pricePerPerson: 70 },
-        { min:  6, max: 11, pricePerPerson: 55 },
+        { min: 6, max: 11, pricePerPerson: 55 },
         { min: 12, max: null, pricePerPerson: 45 }
       ]
     },
     
     people: {
       current: 6,
-      capacity:  12,
-      minRequired:  5
+      capacity: 12,
+      minRequired: 5
     },
     
     deadline: "2026-01-22T23:59:59Z",
@@ -188,7 +188,7 @@ export const campaigns = [
     id: 5,
     title: "Premium Green Tea Collection from Japan",
     slug: "premium-green-tea-5kg",
-    description: "Authentic Japanese green tea collection including Sencha, Matcha, and Gyokuro.  Sourced directly from Kyoto tea gardens.",
+    description: "Authentic Japanese green tea collection including Sencha, Matcha, and Gyokuro. Sourced directly from Kyoto tea gardens.",
     image: TeaImg,
     
     category: {
@@ -201,18 +201,18 @@ export const campaigns = [
     pricing: {
       currency: "PLN",
       basePrice: 60,
-      currentPrice: 35,
+      currentPrice: 60,
       tiers: [
-        { min:  1, max: 4, pricePerPerson: 60 },
-        { min:  5, max: 9, pricePerPerson: 45 },
+        { min: 1, max: 4, pricePerPerson: 60 },
+        { min: 5, max: 9, pricePerPerson: 45 },
         { min: 10, max: null, pricePerPerson: 35 }
       ]
     },
     
     people: {
       current: 3,
-      capacity:  10,
-      minRequired:  5
+      capacity: 10,
+      minRequired: 5
     },
     
     deadline: "2026-01-19T23:59:59Z",
@@ -244,11 +244,11 @@ export const campaigns = [
     pricing: {
       currency: "PLN",
       basePrice: 65,
-      currentPrice: 40,
+      currentPrice: 50,
       tiers: [
         { min: 1, max: 3, pricePerPerson: 65 },
-        { min:  4, max: 7, pricePerPerson: 50 },
-        { min:  8, max: null, pricePerPerson: 40 }
+        { min: 4, max: 7, pricePerPerson: 50 },
+        { min: 8, max: null, pricePerPerson: 40 }
       ]
     },
     
@@ -271,10 +271,10 @@ export const campaigns = [
   },
   
   {
-    id:  7,
+    id: 7,
     title: "Professional Hair Care Bundle - Salon Quality",
     slug: "professional-haircare-bundle",
-    description:  "Professional-grade hair care products including shampoo, conditioner, hair mask, and styling serum. Salon quality at group prices.",
+    description: "Professional-grade hair care products including shampoo, conditioner, hair mask, and styling serum. Salon quality at group prices.",
     image: HaircareImg,
     
     category: {
@@ -287,11 +287,11 @@ export const campaigns = [
     pricing: {
       currency: "PLN",
       basePrice: 90,
-      currentPrice: 55,
+      currentPrice: 70,
       tiers: [
         { min: 1, max: 6, pricePerPerson: 90 },
-        { min:  7, max: 14, pricePerPerson: 70 },
-        { min:  15, max: null, pricePerPerson: 55 }
+        { min: 7, max: 14, pricePerPerson: 70 },
+        { min: 15, max: null, pricePerPerson: 55 }
       ]
     },
     
@@ -314,13 +314,13 @@ export const campaigns = [
   },
   
   {
-    id:  8,
+    id: 8,
     title: "Natural Handmade Soap Set - 50 Bars",
     slug: "natural-handmade-soap-50pcs",
-    description: "Handcrafted natural soaps made with organic oils and essential oils. No chemicals, perfect for sensitive skin.  Bulk discount available.",
+    description: "Handcrafted natural soaps made with organic oils and essential oils. No chemicals, perfect for sensitive skin. Bulk discount available.",
     image: SoapImg,
     
-    category:  {
+    category: {
       id: "beauty",
       name: "Beauty & Care",
       icon: "💄",
@@ -328,20 +328,20 @@ export const campaigns = [
     },
     
     pricing: {
-      currency:  "PLN",
+      currency: "PLN",
       basePrice: 35,
-      currentPrice: 20,
+      currentPrice: 25,
       tiers: [
         { min: 1, max: 8, pricePerPerson: 35 },
-        { min:  9, max: 19, pricePerPerson: 25 },
+        { min: 9, max: 19, pricePerPerson: 25 },
         { min: 20, max: null, pricePerPerson: 20 }
       ]
     },
     
     people: {
       current: 12,
-      capacity:  20,
-      minRequired:  8
+      capacity: 20,
+      minRequired: 8
     },
     
     deadline: "2026-01-17T23:59:59Z",
@@ -365,7 +365,7 @@ export const campaigns = [
     
     category: {
       id: "electronics",
-      name:  "Electronics",
+      name: "Electronics",
       icon: "💻",
       color: "#3B82F6"
     },
@@ -373,11 +373,11 @@ export const campaigns = [
     pricing: {
       currency: "PLN",
       basePrice: 200,
-      currentPrice: 120,
+      currentPrice: 150,
       tiers: [
         { min: 1, max: 9, pricePerPerson: 200 },
-        { min:  10, max: 24, pricePerPerson: 150 },
-        { min:  25, max: null, pricePerPerson: 120 }
+        { min: 10, max: 24, pricePerPerson: 150 },
+        { min: 25, max: null, pricePerPerson: 120 }
       ]
     },
     
@@ -393,10 +393,10 @@ export const campaigns = [
     organizer: {
       id: 1,
       username: "pxyvrld",
-      displayName:  "Hubert"
+      displayName: "Hubert"
     },
     
-    createdAt:  "2025-12-27T15:00:00Z"
+    createdAt: "2025-12-27T15:00:00Z"
   },
   
   {
@@ -416,10 +416,10 @@ export const campaigns = [
     pricing: {
       currency: "PLN",
       basePrice: 140,
-      currentPrice: 85,
+      currentPrice: 110,
       tiers: [
         { min: 1, max: 8, pricePerPerson: 140 },
-        { min:  9, max: 19, pricePerPerson: 110 },
+        { min: 9, max: 19, pricePerPerson: 110 },
         { min: 20, max: null, pricePerPerson: 85 }
       ]
     },
@@ -459,10 +459,10 @@ export const campaigns = [
     pricing: {
       currency: "PLN",
       basePrice: 100,
-      currentPrice: 60,
+      currentPrice: 80,
       tiers: [
         { min: 1, max: 6, pricePerPerson: 100 },
-        { min:  7, max: 14, pricePerPerson: 80 },
+        { min: 7, max: 14, pricePerPerson: 80 },
         { min: 15, max: null, pricePerPerson: 60 }
       ]
     },
@@ -487,26 +487,26 @@ export const campaigns = [
   
   {
     id: 12,
-    title:  "Whey Protein Powder Bulk - 10kg Premium Quality",
+    title: "Whey Protein Powder Bulk - 10kg Premium Quality",
     slug: "whey-protein-powder-10kg",
-    description: "Premium whey protein isolate with 90% protein content.  Perfect for muscle building and recovery. Chocolate and vanilla flavors available.",
+    description: "Premium whey protein isolate with 90% protein content. Perfect for muscle building and recovery. Chocolate and vanilla flavors available.",
     image: ProteinImg,
     
     category: {
       id: "sports",
       name: "Sports & Fitness",
       icon: "⚽",
-      color:  "#F59E0B"
+      color: "#F59E0B"
     },
     
-    pricing:  {
+    pricing: {
       currency: "PLN",
       basePrice: 150,
-      currentPrice: 95,
+      currentPrice: 120,
       tiers: [
         { min: 1, max: 12, pricePerPerson: 150 },
-        { min:  13, max: 29, pricePerPerson: 120 },
-        { min:  30, max: null, pricePerPerson: 95 }
+        { min: 13, max: 29, pricePerPerson: 120 },
+        { min: 30, max: null, pricePerPerson: 95 }
       ]
     },
     
@@ -516,7 +516,7 @@ export const campaigns = [
       minRequired: 12
     },
     
-    deadline:  "2026-01-21T23:59:59Z",
+    deadline: "2026-01-21T23:59:59Z",
     status: "active",
     
     organizer: {
