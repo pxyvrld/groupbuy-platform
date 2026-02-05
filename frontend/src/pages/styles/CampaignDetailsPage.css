@@ -193,7 +193,7 @@
 
 /* Join section */
 .join-section {
-    background: linear-gradient(135deg, #3B82F6, #2563EB);
+    background: var(--color-dark);
     border-radius: 12px;
     padding: 2.5rem;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
@@ -222,8 +222,8 @@
 }
 
 .join-button {
-    background: white;
-    color: #3B82F6;
+    background: var(--color-primary);
+    color: var(--color-dark);
     border: none;
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
