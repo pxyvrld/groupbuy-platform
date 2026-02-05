@@ -23,7 +23,7 @@ export const campaigns = [
       id: "food",
       name: "Food & Drinks",
       icon: "🍔",
-      color: "#10B981"
+      color: "#0d7e58"
     },
     
     pricing: {
@@ -66,7 +66,7 @@ export const campaigns = [
       id: "food",
       name: "Food & Drinks",
       icon: "🍔",
-      color: "#10B981"
+      color: "#0d7e58"
     },
     
     pricing: {
@@ -109,7 +109,7 @@ export const campaigns = [
       id: "food",
       name: "Food & Drinks",
       icon: "🍔",
-      color: "#10B981"
+      color: "#0d7e58"
     },
     
     pricing: {
@@ -152,7 +152,7 @@ export const campaigns = [
       id: "food",
       name: "Food & Drinks",
       icon: "🍔",
-      color: "#10B981"
+      color: "#0d7e58"
     },
     
     pricing: {
@@ -195,7 +195,7 @@ export const campaigns = [
       id: "food",
       name: "Food & Drinks",
       icon: "🍔",
-      color: "#10B981"
+      color: "#0d7e58"
     },
     
     pricing: {
