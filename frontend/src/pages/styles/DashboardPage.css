@@ -104,3 +104,40 @@
     gap: 2rem;
     padding: 1rem 14rem;
 }
+
+@media (max-width: 768px) {
+
+    *{
+        text-align: center;
+    }
+
+  .campaigns-grid {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  .cardsContainer {
+    padding: 0 !important;
+  }
+  
+  .stat-cards-container {
+    flex-direction: column;
+  }
+
+  .stat-card {
+    padding: 3rem 2rem;
+    font-size: 1.25rem;
+}
+  
+  .tabs-navigation {
+    flex-direction: column;
+  }
+
+  .create-button {
+    font-size: 1rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: auto;
+    height: auto;
+}
+}
