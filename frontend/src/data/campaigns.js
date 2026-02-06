@@ -43,7 +43,7 @@ export const campaigns = [
       minRequired: 5
     },
     
-    deadline: "2026-01-20T23:59:59Z",
+    deadline: "2026-03-20T23:59:59Z",
     status: "active",
     
     organizer: {
@@ -86,7 +86,7 @@ export const campaigns = [
       minRequired: 5
     },
     
-    deadline: "2026-01-18T23:59:59Z",
+    deadline: "2026-03-15T23:59:59Z",
     status: "active",
     
     organizer: {
@@ -129,7 +129,7 @@ export const campaigns = [
       minRequired: 3
     },
     
-    deadline: "2026-01-25T23:59:59Z",
+    deadline: "2026-03-25T23:59:59Z",
     status: "active",
     
     organizer: {
@@ -172,7 +172,7 @@ export const campaigns = [
       minRequired: 5
     },
     
-    deadline: "2026-01-22T23:59:59Z",
+    deadline: "2026-04-10T23:59:59Z",
     status: "active",
     
     organizer: {
@@ -215,7 +215,7 @@ export const campaigns = [
       minRequired: 5
     },
     
-    deadline: "2026-01-19T23:59:59Z",
+    deadline: "2026-03-18T23:59:59Z",
     status: "active",
     
     organizer: {
@@ -258,7 +258,7 @@ export const campaigns = [
       minRequired: 4
     },
     
-    deadline: "2026-01-14T23:59:59Z",
+    deadline: "2026-03-12T23:59:59Z",
     status: "active",
     
     organizer: {
@@ -301,7 +301,7 @@ export const campaigns = [
       minRequired: 6
     },
     
-    deadline: "2026-01-23T23:59:59Z",
+    deadline: "2026-04-05T23:59:59Z",
     status: "active",
     
     organizer: {
@@ -344,7 +344,7 @@ export const campaigns = [
       minRequired: 8
     },
     
-    deadline: "2026-01-17T23:59:59Z",
+    deadline: "2026-03-22T23:59:59Z",
     status: "active",
     
     organizer: {
@@ -387,7 +387,7 @@ export const campaigns = [
       minRequired: 10
     },
     
-    deadline: "2026-01-26T23:59:59Z",
+    deadline: "2026-04-15T23:59:59Z",
     status: "active",
     
     organizer: {
@@ -430,7 +430,7 @@ export const campaigns = [
       minRequired: 8
     },
     
-    deadline: "2026-01-16T23:59:59Z",
+    deadline: "2026-03-28T23:59:59Z",
     status: "active",
     
     organizer: {
@@ -473,7 +473,7 @@ export const campaigns = [
       minRequired: 6
     },
     
-    deadline: "2026-01-24T23:59:59Z",
+    deadline: "2026-04-08T23:59:59Z",
     status: "active",
     
     organizer: {
@@ -516,7 +516,7 @@ export const campaigns = [
       minRequired: 12
     },
     
-    deadline: "2026-01-21T23:59:59Z",
+    deadline: "2026-04-01T23:59:59Z",
     status: "active",
     
     organizer: {
