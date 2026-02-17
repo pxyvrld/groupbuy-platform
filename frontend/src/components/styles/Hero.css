@@ -132,14 +132,14 @@
 }
 
 
-.tier:nth-child(2) {
+.tier:nth-child(3) {
     background:  linear-gradient(135deg, #10B981 0%, #059669 100%);
     transform: scale(1.08);
     box-shadow: 0 8px 20px rgba(16, 185, 129, 0.5);
     position: relative;
 }
 
-.tier:nth-child(2)::before {
+.tier:nth-child(3)::before {
     content: "BEST VALUE";
     position: absolute;
     top: -12px;

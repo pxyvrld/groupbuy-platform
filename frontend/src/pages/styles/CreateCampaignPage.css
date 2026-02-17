@@ -1,0 +1,199 @@
+.create-campaign-container {
+  max-width: 1400px;
+  margin: 80px auto 40px;
+  padding: 60px 100px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.create-campaign-container h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.create-campaign-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.create-campaign-container label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.create-campaign-container input[type="text"],
+.create-campaign-container input[type="number"],
+.create-campaign-container input[type="datetime-local"],
+.create-campaign-container select,
+.create-campaign-container textarea {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.create-campaign-container input:focus,
+.create-campaign-container select:focus,
+.create-campaign-container textarea:focus {
+  outline: none;
+  border-color: #0d7e58;
+}
+
+.create-campaign-container input::placeholder,
+.create-campaign-container textarea::placeholder {
+  color: #999;
+}
+
+/* Grid layout dla podstawowych pól */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Description - pełna szerokość */
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Sekcje */
+.ImageSection,
+.CategorySection,
+.PricingSection,
+.PeopleSection,
+.TimeSection {
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+}
+
+.PricingSection h3 {
+  font-size: 22px;
+  margin-bottom: 25px;
+  color: #1a1a1a;
+  border-bottom: 2px solid #0d7e58;
+  padding-bottom: 12px;
+}
+
+.PricingSection h4 {
+  font-size: 16px;
+  margin: 20px 0 10px;
+  color: #555;
+  font-weight: 600;
+}
+
+/* Tier layout - 2 kolumny na desktop */
+.tier-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.tier-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* People section - 2 pola obok siebie */
+.PeopleSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.people-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Select dropdown */
+.create-campaign-container select {
+  cursor: pointer;
+  background: white;
+}
+
+/* Submit button */
+.create-campaign-container button[type="submit"] {
+  padding: 18px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  background: #0d7e58;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+  margin-top: 20px;
+  align-self: center;
+  min-width: 250px;
+}
+
+.create-campaign-container button[type="submit"]:hover {
+  background: #0a6347;
+  transform: translateY(-2px);
+}
+
+.create-campaign-container button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Responsywność - mobile */
+@media (max-width: 968px) {
+  .create-campaign-container {
+    margin: 60px 20px 20px;
+    padding: 30px 25px;
+  }
+
+  .create-campaign-container h1 {
+    font-size: 26px;
+  }
+
+  .form-row,
+  .tier-row,
+  .PeopleSection {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .form-group.full-width {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .create-campaign-container {
+    padding: 20px 15px;
+  }
+
+  .ImageSection,
+  .CategorySection,
+  .PricingSection,
+  .PeopleSection,
+  .TimeSection {
+    padding: 20px 15px;
+  }
+}
