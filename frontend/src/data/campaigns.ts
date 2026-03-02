@@ -11,7 +11,9 @@ import TeaImg from '../assets/tea.jpg'
 import YerbaImg from '../assets/yerba.webp'
 import YogaMatImg from '../assets/yogamat.jpg'
 
-export const campaigns = [
+import type { Campaign } from '../types/index.ts';
+
+export const campaigns:Campaign[] = [
   {
     id: 1,
     title: "Premium Coffee Beans from Local Roastery",
