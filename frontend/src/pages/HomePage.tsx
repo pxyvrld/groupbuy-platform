@@ -13,7 +13,7 @@ const HomePage = () => {
       <Hero/>
       <main>
         <section className='campaigns'>
-          <h1>Featured Campaigns</h1>
+          <h1 id='beforeCampaignText'>Featured Campaigns</h1>
           <h2>Join a group purchase now and start saving. The more people join, the lower your price!</h2>
           <div className='cardsContainer'>
             {featuredCampaigns.map(campaign => (

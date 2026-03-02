@@ -10,7 +10,7 @@ const CampaignsPage = () => {
     const [selectedCategory, setSelectedCategory] = useState("all");
     const [selectedSort, setSelectedSort] = useState("default");
 
-    const filterCampaigns = (searchTerm, selectedCategory) => {
+    const filterCampaigns = (searchTerm:string, selectedCategory:string) => {
         return campaigns.filter(campaign => {
         const matchesCategory = selectedCategory === "all" || campaign.category.id === selectedCategory;
         const matchesSearch = searchTerm === "" || campaign.title.toLowerCase().includes(searchTerm.toLowerCase());

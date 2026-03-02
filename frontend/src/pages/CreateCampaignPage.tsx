@@ -19,7 +19,7 @@ const CreateCampaignPage = () => {
     deadline: ""
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -27,7 +27,7 @@ const CreateCampaignPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:React.SyntheticEvent) => {
     e.preventDefault();
     
     console.log("Formularz wysłany!", formData);
@@ -77,7 +77,7 @@ const CreateCampaignPage = () => {
               value={formData.description}
               onChange={handleChange}
               placeholder="Describe your campaign in detail..."
-              rows="5"
+              rows={5}
             />
           </div>
 

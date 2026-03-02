@@ -5,6 +5,16 @@ import './styles/CampaignDetailsPage.css';
 const CampaignDetailsPage = () => {
 
   const {id} = useParams();
+
+  if (!id) {
+    return (
+     <div>
+        <h1>Invalid Campaign ID</h1>
+        <p>The campaign you're looking for doesn't exist.</p>
+      </div>
+    )
+  }
+
   const campaign = campaigns. find(c => c.id === parseInt(id));
 
   if (!campaign) {
