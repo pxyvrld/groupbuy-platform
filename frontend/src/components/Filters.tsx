@@ -1,5 +1,14 @@
 import './styles/Filters.css'
 
+interface FiltersProps {
+    searchTerm: string;
+    setSearchTerm: (value: string) => void;
+    selectedCategory: string;
+    setSelectedCategory: (value: string) => void;
+    selectedSort: string;
+    setSelectedSort: (value: string) => void;
+}
+
 const Filters = ({
     searchTerm,
     setSearchTerm,
@@ -7,7 +16,7 @@ const Filters = ({
     setSelectedCategory,
     selectedSort,
     setSelectedSort
-}) => {
+}: FiltersProps) => {
 
   return (
     <>

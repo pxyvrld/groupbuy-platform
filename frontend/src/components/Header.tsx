@@ -11,7 +11,7 @@ const Header = () => {
 
     const scrollToHowItWorks = () => {
         const sectionHIT = document.querySelector('.howItWorks');
-        sectionHIT.scrollIntoView({behavior: 'smooth'});
+        if (sectionHIT) sectionHIT.scrollIntoView({behavior: 'smooth'});
     }
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
