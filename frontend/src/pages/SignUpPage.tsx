@@ -12,7 +12,7 @@ const SignUpPage = () => {
   
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     
     if (password !== confirmPassword) {

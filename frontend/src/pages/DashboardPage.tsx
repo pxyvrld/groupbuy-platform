@@ -18,7 +18,7 @@ const DashboardPage = () => {
 
   const CalculateUserSavings = () => {
     const joinedCampaigns = campaigns.filter(campaign => mockUser.joinedCampaigns.includes(campaign.id));
-    const totalSaved = joinedCampaigns.reduce( (saved, campaign) => {
+    const totalSaved = joinedCampaigns.reduce( (saved: number, campaign) => {
       return saved += (campaign.pricing.basePrice - campaign.pricing.currentPrice);
     }, 0)
 
