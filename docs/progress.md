@@ -39,6 +39,8 @@
 
 **Status:** ✅ ZAKOŃCZONY (8 listopada 2025, 02:00)
 
+---
+
 ## 📅 TYDZIEŃ 1: HTML/CSS Basics (9-15 listopada 2025)
 
 ### Cele:
@@ -79,6 +81,7 @@
 
 **Status:** ✅ ZAKOŃCZONY (15 listopada 2025, 01:11 UTC)
 
+---
 
 ## 📅 TYDZIEŃ 2: JavaScript Basics (16-22 grudnia 2025)
 
@@ -90,7 +93,7 @@
 - Live countdown timers na kartach kampanii
 
 ### Zrobione:
-- ✅ **Filtering system** (kategorie:  Food, Beauty, Electronics, Sports, All)
+- ✅ **Filtering system** (kategorie: Food, Beauty, Electronics, Sports, All)
   - Dropdown `<select>` z event listener (`change` event)
   - `filterCampaigns()` function używająca `.filter()` method
   - Match category ORAZ search query (combined filters)
@@ -101,9 +104,9 @@
   - Instant filtering podczas pisania
   
 - ✅ **Sorting system** (4 opcje sortowania)
-  - Price:  Low to High / High to Low
+  - Price: Low to High / High to Low
   - People Joined: Most First
-  - Deadline:  Ending Soon
+  - Deadline: Ending Soon
   - `.sort()` method z custom comparator functions
   
 - ✅ **Combined filters** (kategoria + search + sort działają razem)
@@ -143,7 +146,7 @@
   - `setInterval()` (update co 1000ms = 1 sekunda)
   - `timetoSeconds()` / `secondsToTime()` conversion functions
   - Clear previous timers przy re-render (`clearInterval()` + array tracking)
-  - Format:  `HH:MM:SS` (leading zeros)
+  - Format: `HH:MM:SS` (leading zeros)
   
 - ✅ **Smooth scroll navigation**
   - Browse buttons (hero + navbar) → campaigns section
@@ -204,6 +207,8 @@
 - Hamburger menu na mobile (Week 3 - JavaScript)
 - Następny krok: React setup (Vite) → przepisanie logiki do React components
 
+---
+
 ## 📅 TYDZIEŃ 3: React Migration + UI Improvements (23 grudnia 2025 - 4 stycznia 2026)
 
 ### Cele:
@@ -221,7 +226,7 @@
 **React Core:**
 - ✅ **Vite setup** - `npm create vite@latest` (React template)
 - ✅ **Component architecture** - 6 komponentów: 
-  - `Header. jsx` - navbar z hamburger menu
+  - `Header.jsx` - navbar z hamburger menu
   - `Hero.jsx` - hero section z Browse Campaigns button
   - `Filters.jsx` - search bar + 2x select (category, sort)
   - `CampaignCard.jsx` - pojedyncza karta kampanii
@@ -233,12 +238,12 @@
   - `selectedSort` - sort dropdown
   - `timeRemaining` - countdown timer (per card)
 - ✅ **useEffect hook** - countdown timers
-  - Jeden `useEffect` per karta (dependency:  `timeRemaining`)
+  - Jeden `useEffect` per karta (dependency: `timeRemaining`)
   - Cleanup function (`return () => clearInterval(timer)`)
   - Funkcjonalne update (`setTimeRemaining(prev => prev - 1)`)
 - ✅ **Props drilling** - lifting state up: 
-  - App. jsx → Filters (search/category/sort state)
-  - Filters → App. jsx (setState callbacks)
+  - App.jsx → Filters (search/category/sort state)
+  - Filters → App.jsx (setState callbacks)
   - App.jsx → CampaignCard (campaign data)
 - ✅ **Controlled inputs** - `value` + `onChange` (search, selects)
 
@@ -293,7 +298,7 @@
 
 **React Hooks:**
 - **useState** - `const [state, setState] = useState(initialValue)`
-  - Zwraca array:  [current value, setter function]
+  - Zwraca array: [current value, setter function]
   - Re-render component jak setState wywołane
 - **useEffect** - side effects (timers, API calls, subscriptions)
   - `useEffect(() => { /* effect */ }, [dependencies])`
@@ -303,21 +308,21 @@
 
 **Event Handling:**
 - `onClick`, `onChange`, `onInput` (camelCase w React!)
-- Event handlers jako arrow functions:  `onClick={() => fn()}`
+- Event handlers jako arrow functions: `onClick={() => fn()}`
 - Passing callbacks jako props: `<Child onUpdate={handleUpdate} />`
 
 **Conditional Rendering:**
 - `{isOpen && <div>...</div>}` (render only if true)
-- `{isOpen ?  <A /> : <B />}` (ternary operator)
+- `{isOpen ? <A /> : <B />}` (ternary operator)
 - `className={`base ${isActive ? 'active' : ''}`}` (dynamic classes)
 
 **Lists & Keys:**
-- `.map()` do renderowania list:  `{campaigns.map(c => <Card key={c.id} />)}`
+- `.map()` do renderowania list: `{campaigns.map(c => <Card key={c.id} />)}`
 - **key prop** - unikalne ID (pomaga React zoptymalizować re-renders)
 
 **CSS in React:**
 - `className` (nie `class`!)
-- Inline styles:  `style={{width: `${percent}%`}}` (object notation)
+- Inline styles: `style={{width: `${percent}%`}}` (object notation)
 - CSS Modules (scoped styles, unikalne nazwy klas)
 - CSS Variables (`:root` - globalne kolory/spacing)
 
@@ -328,12 +333,249 @@
 - `public/assets/` - static files (images, icons)
 
 ### Screenshots: 
-_(TODO: dodaj screenshoty Week 3 - React version)_
+_(Week 3 używa tych samych screenów co Week 2 - UI wygląda tak samo, tylko pod spodem React zamiast vanilla JS)_
 
 **Status:** ✅ ZAKOŃCZONY (4 stycznia 2026, ~19:00 UTC)
 
 ### Notatki:
-- Repo:  https://github.com/pxyvrld/groupbuy-platform
+- Repo: https://github.com/pxyvrld/groupbuy-platform
 - PR: Week 3: React Migration + UI Improvements (week3 → main)
-- Następny krok: Week 4 - React Router + Pages (7 stron, routing, protected routes)
+- Następny krok: Week 4 - React Router + TypeScript + Pages
 - Czas: ~15-20h (split: ~10h React migration, ~5-10h UI improvements)
+
+---
+
+## 📅 TYDZIEŃ 4: TypeScript + React Router + Advanced Architecture (5 stycznia - 3 marca 2026)
+
+### Cele:
+- Pełna migracja na TypeScript
+- Implementacja React Router (multi-page app)
+- Podział na Pages vs Components
+- 8 stron (Home, Campaigns, CampaignDetails, Dashboard, Create, Login, Signup, 404)
+- Type-safe komponenty i props
+- CSS improvements (page-specific styling)
+
+### Zrobione:
+
+**TypeScript Migration:**
+- ✅ **Konwersja .jsx → .tsx** - wszystkie komponenty i strony
+- ✅ **Type definitions** - plik `src/types/campaign.ts`:
+  - Interface `Campaign` (id, title, description, image, category, pricing, people, organizer, deadline)
+  - Interface `Category` (id, name, icon)
+  - Interface `PricingTier` (people, pricePerPerson)
+  - Interface `Pricing` (basePrice, tiers, currentPrice)
+  - Interface `People` (current, capacity, minRequired)
+  - Interface `Organizer` (name, avatar)
+- ✅ **Typed props** - interface dla każdego komponentu:
+  - `CampaignCardProps` (campaign: Campaign)
+  - `FiltersProps` (searchTerm, setSearchTerm, selectedCategory, setSelectedCategory, selectedSort, setSelectedSort)
+  - `HeroProps` (brak - statyczny komponent)
+- ✅ **Typed hooks**:
+  - `useState<string>` (searchTerm, selectedCategory, selectedSort)
+  - `useEffect` z dependency array (cleanup dla timerów)
+  - `useParams<{ id: string }>` (dynamic routing)
+  - `useNavigate()` (programmatic navigation)
+- ✅ **Event handlers**:
+  - `React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>`
+  - `React.SyntheticEvent` (submit formularzy)
+- ✅ **Function parameters** - explicit types:
+  - `filterCampaigns(searchTerm: string, selectedCategory: string)`
+  - `formatTimeLeft(deadline: string): string`
+  - `pad(num: number): string`
+- ✅ **Array methods** - typed:
+  - `.filter()`, `.map()`, `.sort()` z typowanymi callback functions
+  - `.reduce<number>()` dla obliczeń (np. total saved)
+- ✅ **Zero TS errors** - cały projekt kompiluje się bez błędów
+
+**React Router v6:**
+- ✅ **Setup** - `npm install react-router-dom`
+- ✅ **BrowserRouter** - wrap całej aplikacji w `App.tsx`
+- ✅ **Routes & Route** - 8 route'ów:
+  - `/` → HomePage
+  - `/campaigns` → CampaignsPage
+  - `/campaign/:id` → CampaignDetailsPage (dynamic)
+  - `/login` → LoginPage
+  - `/signup` → SignUpPage
+  - `/dashboard` → DashboardPage
+  - `/create` → CreateCampaignPage
+  - `*` → NotFoundPage (catch-all 404)
+- ✅ **Navigation**:
+  - `<Link to="/path">` (SPA navigation, no reload)
+  - `useNavigate()` (redirect po login/signup)
+  - `useParams()` (dynamic id z URL)
+- ✅ **Persistent layout** - Header + Footer wrap all routes
+
+**Page-Based Architecture:**
+- ✅ **HomePage** (`src/pages/HomePage.tsx`):
+  - Hero section
+  - Featured campaigns (first 4 from data)
+  - HowItWorks section
+- ✅ **CampaignsPage** (`src/pages/CampaignsPage.tsx`):
+  - Full campaign list
+  - Filters (search, category, sort)
+  - Grid layout (2 cols desktop, 1 col mobile)
+- ✅ **CampaignDetailsPage** (`src/pages/CampaignDetailsPage.tsx`):
+  - Dynamic routing (`/campaign/:id`)
+  - Full campaign info (image, description, pricing tiers, organizer)
+  - Join/Leave button (capacity validation)
+  - Error handling (404 jeśli campaign nie istnieje)
+- ✅ **DashboardPage** (`src/pages/DashboardPage.tsx`):
+  - Mock user object (id, name, email, createdCampaigns, joinedCampaigns)
+  - Tabs: "My Campaigns" / "Joined Campaigns"
+  - Stats: Campaigns Created, Campaigns Joined, Total Saved (calculated)
+  - Grid z CampaignCard dla odpowiednich kampanii
+- ✅ **CreateCampaignPage** (`src/pages/CreateCampaignPage.tsx`):
+  - Full form (11 pól):
+    - Title, Description, Image URL, Category (select)
+    - Base Price, Tier 1 (max people, price), Tier 2 (max people, price), Tier 3 (price)
+    - Capacity, Min Required, Deadline (datetime-local)
+  - Controlled inputs (useState object dla formData)
+  - Submit handler (console.log na razie - backend integration later)
+- ✅ **LoginPage** (`src/pages/LoginPage.tsx`):
+  - Email + Password inputs
+  - Submit → zapisuje email do localStorage (mock auth)
+  - Redirect do `/dashboard` (useNavigate)
+  - Link do SignUp
+- ✅ **SignUpPage** (`src/pages/SignUpPage.tsx`):
+  - Username, Email, Password, Confirm Password
+  - Password match validation (local state error)
+  - Submit → zapisuje email + username do localStorage
+  - Redirect do `/dashboard`
+  - Link do Login
+- ✅ **NotFoundPage** (`src/pages/NotFoundPage.tsx`):
+  - 404 error message
+  - Link do homepage
+
+**Component Separation:**
+- ✅ **Components** (`src/components/`) - reusable UI:
+  - `Header.tsx` - navbar z hamburger menu
+  - `Hero.tsx` - hero section z Browse button
+  - `Filters.tsx` - search + 2x select (category, sort)
+  - `CampaignCard.tsx` - pojedyncza karta (używana w 3 miejscach)
+  - `Footer.tsx` - footer z linkami
+  - `HowItWorks.tsx` - 3-step guide
+- ✅ **Pages** (`src/pages/`) - route-specific views:
+  - HomePage, CampaignsPage, CampaignDetailsPage, DashboardPage, CreateCampaignPage, LoginPage, SignUpPage, NotFoundPage
+
+**CSS Improvements:**
+- ✅ **Page-specific CSS** - każda strona ma swój plik:
+  - `HomePage.css`, `CampaignsPage.css`, `DashboardPage.css`, `CreateCampaignPage.css`, `LoginPage.css`, `SignUpPage.css`, `NotFoundPage.css`
+- ✅ **Component CSS** - w `src/components/styles/`:
+  - `Header.css`, `Hero.css`, `Filters.css`, `CampaignCard.css`, `Footer.css`, `HowItWorks.css`
+- ✅ **Modular styling** - każdy plik odpowiada za swój kawałek UI
+- ✅ **CSS Variables** - `:root` w `index.css` (colors, spacing)
+- ✅ **Form styling** - consistent design dla inputs, textareas, buttons
+- ✅ **Tab navigation** - active state styling (dashboard tabs)
+- ✅ **Responsive** - mobile-first approach (breakpoint 768px)
+
+**Data & State:**
+- ✅ **campaigns.ts** - typed export (`Campaign[]`)
+- ✅ **mockUser** - object w DashboardPage (id, name, email, createdCampaigns, joinedCampaigns)
+- ✅ **localStorage** - mock auth (email + username)
+- ✅ **State management** - useState dla:
+  - Form inputs (CreateCampaignPage - 11 pól w jednym obiekcie)
+  - Search/filter/sort (CampaignsPage)
+  - Tab switching (DashboardPage)
+  - Countdown timers (CampaignCard - per card useEffect)
+
+**Code Quality:**
+- ✅ **Zero implicit any** - wszystkie parametry typowane
+- ✅ **Proper cleanup** - useEffect returns cleanup dla timerów
+- ✅ **Null checks** - optional chaining dla `useParams()` (404 handling)
+- ✅ **Error handling** - 404 page, campaign not found, password mismatch
+- ✅ **Separation of concerns** - pages (logic + routing) vs components (UI)
+- ✅ **DRY principle** - reusable CampaignCard, Filters, Header/Footer
+
+### Nauka (koncepty):
+
+**TypeScript Fundamentals:**
+- **Type annotations** - `const name: string = "Jan"`
+- **Interfaces** - custom types dla obiektów
+- **Type inference** - TS sam wywnioskuje typ (nie zawsze trzeba pisać)
+- **Union types** - `string | number` (może być jedno albo drugie)
+- **Optional properties** - `name?: string` (może nie być)
+- **Generic types** - `useState<string>`, `Array<Campaign>`
+- **Type guards** - sprawdzanie typu przed użyciem (null checks)
+- **Compile-time errors** - TS łapie błędy przed uruchomieniem
+
+**React + TypeScript:**
+- **Props interfaces** - `interface Props { name: string }`
+- **Typed hooks** - `useState<T>`, `useEffect` (dependency array type-checked)
+- **Event types** - `React.ChangeEvent`, `React.SyntheticEvent`, `React.MouseEvent`
+- **Ref types** - `useRef<HTMLDivElement>(null)`
+- **Children prop** - `React.ReactNode` (typ dla children)
+
+**React Router:**
+- **Client-side routing** - zmiana URL bez reload strony
+- **BrowserRouter** - HTML5 History API (czyste URL bez `#`)
+- **Routes & Route** - deklaracja route'ów w JSX
+- **Link** - SPA navigation (preventDefault + pushState)
+- **useNavigate** - programmatic navigation (redirect z JS)
+- **useParams** - odczyt dynamic segments z URL (`/campaign/:id` → `{id: "2"}`)
+- **Catch-all route** - `path="*"` (404 page)
+- **Nested routes** - można zagnieżdżać Routes (nie użyte w projekcie)
+
+**Forms in React:**
+- **Controlled inputs** - `value` + `onChange` (state jako source of truth)
+- **Form state** - object w useState (wszystkie pola w jednym obiekcie)
+- **Submit handling** - `e.preventDefault()` (blokada default action)
+- **Validation** - local state dla error messages
+- **Input types** - text, email, password, number, datetime-local, select, textarea
+
+**Advanced Patterns:**
+- **Page vs Component separation** - pages handle routing/logic, components handle UI
+- **Mock data** - hardcoded data przed backend integration
+- **Mock auth** - localStorage jako temporary auth (przed JWT)
+- **Calculated values** - derived state (np. totalSaved z reduce)
+- **Conditional rendering** - tabs, error messages, 404 pages
+
+### Screenshots:
+![Home Desktop](screenshots/week4/desktop/home-page-desktop.png)
+![Campaigns Desktop](screenshots/week4/desktop/campaigns-page-desktop.png)
+![Campaign Details Desktop](screenshots/week4/desktop/campaignX-page-desktop.png)
+![Dashboard Desktop](screenshots/week4/desktop/dashboard-page-desktop.png)
+![Create Campaign Desktop](screenshots/week4/desktop/create-campaign-page-desktop.png)
+![Login Desktop](screenshots/week4/desktop/login-page-desktop.png)
+![Home Mobile](screenshots/week4/mobile/home-page-mobile.png)
+![Campaigns Mobile](screenshots/week4/mobile/campaigns-page-mobile.png)
+![Campaign Details Mobile](screenshots/week4/mobile/campaignX-page-mobile.png)
+
+**Status:** ✅ ZAKOŃCZONY (3 marca 2026, ~18:00 UTC)
+
+### Notatki:
+- Repo: https://github.com/pxyvrld/groupbuy-platform
+- PR: Week 4: TypeScript + React Router + Advanced Architecture (week4/advanced-react → main)
+- Następny krok: Week 5-6 - Spring Boot Backend (REST API + JWT Auth + PostgreSQL + Docker)
+- Czas: ~18-22h (split: ~8h TypeScript, ~6h React Router + Pages, ~4-8h CSS + polish)
+- **Context API + Protected Routes** - przesunięte na po backendzie (żeby nie robić podwójnej roboty - najpierw mock, potem przepisywać pod prawdziwe API)
+
+---
+
+## 📅 WEEK 5-6: Backend + Integration (PLANNED)
+
+### Cele:
+- Spring Boot setup + PostgreSQL
+- REST API dla campaigns (CRUD endpoints)
+- JWT authentication (login, register, token validation)
+- User-Campaign relationships (creator, joined)
+- Frontend integration (Axios, AuthContext, Protected Routes)
+- Docker (Dockerfile + docker-compose)
+
+### TODO:
+- 🔜 Spring Boot project setup (Spring Initializr)
+- 🔜 Database schema (User, Campaign, PricingTier, Category tables)
+- 🔜 JPA Entities + Repositories
+- 🔜 Spring Security + JWT implementation
+- 🔜 Campaign CRUD endpoints
+- 🔜 User endpoints (profile, my campaigns, join/leave)
+- 🔜 Frontend: Axios setup + interceptors (token in headers)
+- 🔜 Frontend: AuthContext (login, logout, user state)
+- 🔜 Frontend: Protected Routes (redirect if not logged in)
+- 🔜 Docker: Dockerfile (backend + frontend)
+- 🔜 Docker Compose (backend + frontend + PostgreSQL)
+
+**Status:** 🚧 STARTING SOON
+
+---
+
+_Last updated: March 3, 2026_
