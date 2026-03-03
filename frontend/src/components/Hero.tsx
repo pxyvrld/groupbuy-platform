@@ -6,12 +6,12 @@ const Hero = () => {
 
     const scrollToCampaigns = () => {
         const campaignsSection = document.querySelector('.campaigns');
-        campaignsSection.scrollIntoView({behavior: 'smooth'});
+        if (campaignsSection) campaignsSection.scrollIntoView({behavior: 'smooth'});
     }
 
     const scrollToHowItWorks = () => {
         const sectionHIT = document.querySelector('.howItWorks');
-        sectionHIT.scrollIntoView({behavior: 'smooth'});
+        if (sectionHIT) sectionHIT.scrollIntoView({behavior: 'smooth'});
     }
 
   return (

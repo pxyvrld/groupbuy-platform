@@ -1,0 +1,71 @@
+.login-container {
+    margin: auto;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--color-dark);
+    margin-bottom: 2rem;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.login-container input {
+    padding: 0.72rem 1rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: var(--color-dark);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.login-container button {
+    padding: 1rem;
+    background-color: var(--color-dark);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.login-container button:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.login-container p {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--color-dark)
+}
+
+.login-container a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}

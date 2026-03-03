@@ -1,0 +1,143 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.welcome-section {
+    background-color: var(--color-dark);
+    padding: 2rem;
+    border-radius: 1rem;
+    color: var(--color-primary);
+    transition: all 0.3s;
+}
+
+.welcome-section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stat-cards-container {
+    display: flex;
+    gap: 1rem;
+    background-color: var(--color-dark);
+    border-radius: 1rem;
+    transition: all 0.3s;
+}
+
+.stat-cards-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card {
+    color: var(--color-primary);
+    padding: 5rem 4rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.tabs-navigation {
+    display: flex;
+    gap: 1rem;
+    background-color: var(--color-dark);
+    border-radius: 1rem;
+    transition: all 0.3s;
+}
+
+.tabs-navigation:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tabs-navigation button {
+    margin: 1rem;
+    width: 15rem;
+    height: 3.5rem;
+    border-radius: 1rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    background-color: var(--color-bg);
+    font-weight: bold;
+    transition: all 0.3s;
+    border-style: none;
+}
+
+.tabs-navigation button.active {
+    background-color: #10B981;
+    color: white;
+}
+
+.tabs-navigation button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.create-button {
+    background-color: #10B981;
+    font-weight: bold;
+    color: black;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    cursor: pointer;
+    border-color: var(--color-dark);
+    border-style: solid;
+    transition: all 0.3s;
+    width: 400px;
+    height: 100px;
+    text-align: center;
+}
+
+.create-button:hover {
+    background-color: #0d7e58;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.campaigns-grid {
+    width:  100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    padding: 1rem 14rem;
+}
+
+@media (max-width: 768px) {
+
+    *{
+        text-align: center;
+    }
+
+  .campaigns-grid {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  .cardsContainer {
+    padding: 0 !important;
+  }
+  
+  .stat-cards-container {
+    flex-direction: column;
+  }
+
+  .stat-card {
+    padding: 3rem 2rem;
+    font-size: 1.25rem;
+}
+  
+  .tabs-navigation {
+    flex-direction: column;
+  }
+
+  .create-button {
+    font-size: 1rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: auto;
+    height: auto;
+}
+}
