@@ -2,26 +2,29 @@ package com.groupbuy.backend.controller;
 
 import com.groupbuy.backend.dto.CampaignDto;
 import com.groupbuy.backend.dto.CreateCampaignRequest;
+import com.groupbuy.backend.service.CampaignService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 @RestController
 public class CampaignController {
+    private final CampaignService campaignService;
+
+    public CampaignController(CampaignService campaignService) {
+        this.campaignService = campaignService;
+    }
 
     @GetMapping("/api/campaigns")
-    public List<CampaignDto> campaigns() {
-        return List.of(new CampaignDto(1L, "Coffe", "done"), new CampaignDto(2L, "Yerba", "done"));
+    public List<CampaignDto> getCampaigns() {
+        return campaignService.findAll();
     }
 
     @GetMapping("/api/campaigns/{id}")
-    public ResponseEntity<CampaignDto> campaign(@PathVariable Long id) {
-        if(id.equals(1L)) return ResponseEntity.ok(new CampaignDto(1L, "Coffee", "done"));
-        if(id.equals(2L)) return ResponseEntity.ok(new CampaignDto(2L, "Yerba", "done"));
+    public ResponseEntity<CampaignDto> getCampaignsById(@PathVariable Long id) {
+        Optional<CampaignDto> opt = campaignService.findById(id);
+        if (opt.isPresent()) return ResponseEntity.ok(opt.get());
         return ResponseEntity.notFound().build();
     }
 
