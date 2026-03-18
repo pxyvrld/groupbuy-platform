@@ -3,9 +3,11 @@ package com.groupbuy.backend.controller;
 import com.groupbuy.backend.dto.CampaignDto;
 import com.groupbuy.backend.dto.CreateCampaignRequest;
 import com.groupbuy.backend.service.CampaignService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URI;
 import java.util.*;
 
 @RestController
@@ -29,7 +31,9 @@ public class CampaignController {
     }
 
     @PostMapping("/api/campaigns")
-    public ResponseEntity<CampaignDto> createCampaign(@RequestBody CreateCampaignRequest request) {
-        return ResponseEntity.status(201).body(new CampaignDto(2L, "Yerba", "done"));
+    public ResponseEntity<CampaignDto> createCampaign(@Valid @RequestBody CreateCampaignRequest request) {
+        CampaignDto created = campaignService.create(request);
+        URI location = URI.create("/api/campaigns/" + created.id());
+        return ResponseEntity.created(location).body(created);
     }
 }
