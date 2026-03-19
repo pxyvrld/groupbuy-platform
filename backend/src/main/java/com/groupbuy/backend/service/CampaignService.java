@@ -21,12 +21,6 @@ public class CampaignService {
         campaigns.add(new CampaignDto(2L, "Yerba", "OPEN"));
     }
 
-    public CampaignDto create(CreateCampaignRequest request) {
-        CampaignDto created = new CampaignDto(nextId++, request.title(), request.status());
-        campaigns.add(created);
-        return created;
-    }
-
     public List<CampaignDto> findAll() {
         return campaigns;
     }
@@ -36,4 +30,15 @@ public class CampaignService {
                 .filter(c -> Objects.equals(c.id(), id))
                 .findFirst();
     }
+
+    public CampaignDto create(CreateCampaignRequest request) {
+        CampaignDto created = new CampaignDto(nextId++, request.title(), request.status());
+        campaigns.add(created);
+        return created;
+    }
+
+    public boolean deleteById(Long id) {
+        return campaigns.removeIf(c -> Objects.equals(c.id(), id));
+    }
+
 }

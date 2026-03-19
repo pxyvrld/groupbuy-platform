@@ -36,4 +36,11 @@ public class CampaignController {
         URI location = URI.create("/api/campaigns/" + created.id());
         return ResponseEntity.created(location).body(created);
     }
+
+    @DeleteMapping("/api/campaigns/{id}")
+    public ResponseEntity<Void> deleteCampaignById(@PathVariable Long id) {
+        boolean deleted = campaignService.deleteById(id);
+        if (deleted) return ResponseEntity.noContent().build();
+        return ResponseEntity.notFound().build();
+    }
 }
