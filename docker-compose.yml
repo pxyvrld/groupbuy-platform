@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: groupbuy-db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: groupbuy
+      POSTGRES_USER: groupbuy
+      POSTGRES_PASSWORD: groupbuy
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
