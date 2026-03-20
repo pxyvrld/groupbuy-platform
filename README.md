@@ -2,9 +2,9 @@
 
 > Full-stack crowdfunding platform for group purchases - portfolio project demonstrating progressive skill development from vanilla JavaScript to TypeScript + React + Spring Boot.
 
-**Current Status:** ✅ Week 4 Complete - TypeScript Migration + React Router + Advanced Architecture | 🚧 Week 5 Starting - Backend Setup
+**Current Status:** ✅ Week 5 Complete — Spring Boot REST API (in-memory) | 🔜 Week 6 — PostgreSQL + JPA + Flyway
 
-**Last updated:** March 3, 2026
+**Last updated:** March 19, 2026
 
 ---
 
@@ -22,63 +22,24 @@ Platform for organizing group purchases to get better prices through collective 
 
 ---
 
-## ✨ Features (Current - Week 4: TypeScript + React Router)
+## ✨ Features
 
-### React Router & Architecture
-- ✅ Multi-page application with 8 routes (/, /campaigns, /campaign/:id, /login, /signup, /dashboard, /create, 404)
-- ✅ Dynamic routing with `useParams()` for campaign details
-- ✅ Programmatic navigation with `useNavigate()` (redirects after login/signup)
-- ✅ Persistent layout (Header + Footer wrap all routes)
-- ✅ 404 handling with `NotFoundPage`
-- ✅ SPA navigation with `<Link>` (no page reloads)
+### Frontend (Week 4: React + TypeScript + React Router)
+- ✅ Multi-page app with routes:
+  - `/`, `/campaigns`, `/campaign/:id`, `/login`, `/signup`, `/dashboard`, `/create`, `*` (404)
+- ✅ TypeScript migration (`.jsx` → `.tsx`), typed props/hooks
+- ✅ Filtering/search/sorting, responsive UI, hamburger menu
+- ✅ Mock auth using `localStorage` (temporary, will be replaced by backend auth)
 
-### TypeScript Integration
-- ✅ Full TypeScript migration (all `.jsx` → `.tsx`)
-- ✅ Comprehensive type definitions (`Campaign`, `Category`, `PricingTier`, `Pricing`, `People`, `Organizer`)
-- ✅ Type-safe props for all components
-- ✅ Typed React hooks (`useState`, `useEffect`, `useParams`, `useNavigate`)
-- ✅ Event handlers properly typed (`React.ChangeEvent`, `React.SyntheticEvent`)
-- ✅ Zero TypeScript errors across entire codebase
-
-### Page-Based Architecture
-- ✅ **HomePage** - hero section + featured campaigns (first 4)
-- ✅ **CampaignsPage** - full campaign list with filters/search/sort
-- ✅ **CampaignDetailsPage** - detailed view with join/leave functionality
-- ✅ **DashboardPage** - user profile with tabs (My Campaigns / Joined Campaigns), savings stats
-- ✅ **CreateCampaignPage** - full form for campaign creation (title, description, pricing tiers, capacity, deadline)
-- ✅ **LoginPage & SignUpPage** - authentication forms with localStorage mock
-- ✅ **NotFoundPage** - 404 error page with redirect link
-
-### React Core (Week 3)
-- ✅ Component-based architecture (Header, Hero, Filters, CampaignCard, Footer, HowItWorks)
-- ✅ State management with `useState` (search, filters, sort, countdown timers)
-- ✅ Side effects with `useEffect` (per-card countdown timers with cleanup)
-- ✅ Props drilling and lifting state up
-- ✅ Controlled form inputs
-
-### Campaign Management
-- ✅ Dynamic rendering with React components
-- ✅ Campaign cards with animated progress bars
-- ✅ Live countdown timers (updates every second, cleanup on unmount)
-- ✅ Join/leave campaign functionality (with capacity validation)
-- ✅ Mock user system (tracks created + joined campaigns)
-
-### Filtering & Search
-- ✅ Category filter (Food, Beauty, Electronics, Sports, All)
-- ✅ Real-time search by campaign title
-- ✅ Multi-option sorting (price asc/desc, people joined, deadline)
-- ✅ Combined filters work seamlessly
-
-### UI/UX Improvements
-- ✅ Responsive hamburger menu with slide-in animation
-- ✅ "How It Works" section (3-step guide)
-- ✅ Improved card badges (auto-sizing, no text wrapping)
-- ✅ Grid layout (2 cols desktop, 1 col mobile)
-- ✅ Smooth scroll navigation
-- ✅ Card hover effects
-- ✅ Fixed Hero height on mobile (`calc(100vh - 4rem)`)
-- ✅ Form styling (inputs, textareas, buttons with consistent design)
-- ✅ Tab navigation UI (dashboard)
+### Backend (Week 5: Spring Boot REST API — in-memory)
+- ✅ Campaign endpoints:
+  - `GET /api/campaigns`
+  - `GET /api/campaigns/{id}` (`200` / `404`)
+  - `POST /api/campaigns` (`201 Created` + `Location` header)
+  - `DELETE /api/campaigns/{id}` (`204` / `404`)
+- ✅ Request validation (`@Valid`) with consistent error response:
+  - `{ "errors": { "field": "message" } }`
+- ✅ Manual testing in Postman (201/204/400/404 cases)
 
 ---
 
@@ -115,7 +76,8 @@ Platform for organizing group purchases to get better prices through collective 
 | **Week 2** | JavaScript Functionality | ✅ Done | `week2/javascript-basics` | ~12-15h |
 | **Week 3** | React Migration + UI | ✅ Done | `week3/react-migration` | ~15-20h |
 | **Week 4** | TypeScript + React Router | ✅ Done | `week4/advanced-react` | ~18-22h |
-| **Week 5-6** | Spring Boot Backend | 🚧 In Progress | `week5/backend-setup` | TBD |
+| **Week 5** | Spring Boot Backend REST API (in-memory) | ✅ Done | `week5/backend-setup` | TBD |
+| **Week 6** | Persistence: PostgreSQL + JPA + Flyway | 🚧 Next | `week6/persistence-postgres-jpa` | TBD |
 
 **Total time invested:** ~58-70 hours (Week 0-4)
 
@@ -132,86 +94,62 @@ This project uses **branch-per-week strategy** to showcase progressive developme
 - **`week1/landing-page`** - Pure HTML/CSS landing page (no JavaScript)
 - **`week2/javascript-basics`** - Vanilla JS implementation (filters, search, sorting, modals, API calls, localStorage)
 - **`week3/react-migration`** - React refactor (components, hooks, UI improvements)
-- **`week4/advanced-react`** - TypeScript + React Router (multi-page app, type safety) ✅ **CURRENT**
-- **`week5/backend-setup`** - Spring Boot backend (coming next)
+- **`week4/advanced-react`** — TypeScript + React Router (frontend milestone) ✅
+- **`week5/backend-setup`** — Spring Boot REST API basics (CRUD + validation + error handling) ✅
+- **`week6/persistence-postgres-jpa`** — PostgreSQL + JPA + Flyway migrations (coming next)
 
 **For recruiters:** Check individual branches to see skill evolution from vanilla JavaScript through React/TypeScript to Spring Boot.
 
 ---
 
-## 🚀 How to Run (Current Version)
+## 🚀 How to Run
 
-```bash
-# Clone repository
-git clone https://github.com/pxyvrld/groupbuy-platform.git
+### 1) Start database (Docker)
+From repo root: `docker compose up -d`
 
-# Navigate to project
-cd groupbuy-platform
+> Note: at the moment the backend still uses **in-memory storage** for campaigns (Week 5).  
+> PostgreSQL persistence will be implemented in **Week 6**.
 
-# Install dependencies
-npm install
+### 2) Run backend (Spring Boot)
+From repo root:
 
-# Run development server
-npm run dev
+- With Maven Wrapper: `cd backend && ./mvnw spring-boot:run`
+- Without wrapper: `cd backend && mvn spring-boot:run`
 
-# Open browser
-# Vite will show URL (usually http://localhost:5173)
-```
+Backend typically runs on: `http://localhost:8080`
 
-**Requirements:**
-- Node.js v18+ (v22.14 recommended)
-- Modern browser (Chrome, Firefox, Safari, Edge)
+### 3) Run frontend (Vite)
+From repo root: `cd frontend && npm install && npm run dev`
+
+Frontend typically runs on: `http://localhost:5173`
 
 ---
 
-## 📂 Project Structure
+## 🔌 API (Week 5)
 
-```
-groupbuy-platform/
-├── src/
-│   ├── components/          # Reusable UI components
-│   │   ├── CampaignCard.tsx
-│   │   ├── Filters.tsx
-│   │   ├── Header.tsx
-│   │   ├── Hero.tsx
-│   │   ├── Footer.tsx
-│   │   ├── HowItWorks.tsx
-│   │   └── styles/          # Component-specific CSS
-│   ├── pages/               # Route pages
-│   │   ├── HomePage.tsx
-│   │   ├── CampaignsPage.tsx
-│   │   ├── CampaignDetailsPage.tsx
-│   │   ├── DashboardPage.tsx
-│   │   ├── CreateCampaignPage.tsx
-│   │   ├── LoginPage.tsx
-│   │   ├── SignUpPage.tsx
-│   │   ├── NotFoundPage.tsx
-│   │   └── styles/          # Page-specific CSS
-│   ├── data/
-│   │   └── campaigns.ts     # Mock campaign data (typed)
-│   ├── types/
-│   │   └── campaign.ts      # TypeScript interfaces
-│   ├── App.tsx              # Router setup
-│   ├── main.tsx             # Entry point
-│   └── index.css            # Global styles
-├── public/
-│   └── assets/
-│       ├── images/          # Campaign images, logo
-│       └── icons/           # Favicon
-├── docs/
-│   ├── progress.md          # Weekly progress tracker
-│   ├── tech-stack.md        # Technology deep dive
-│   ├── wireframes/          # Figma mockups (5 screens)
-│   └── screenshots/         # Weekly screenshots (Week 1-4)
-│       └── week4/
-│           ├── desktop/     # Desktop screens (13 images)
-│           └── mobile/      # Mobile screens (14 images)
-├── package.json
-├── tsconfig.json            # TypeScript config
-├── vite.config.ts           # Vite config
-├── README.md
-└── .gitignore
-```
+### Create campaign
+`POST /api/campaigns`
+
+Example body:
+`{ "title": "Tea", "status": "OPEN" }`
+
+Expected:
+- `201 Created`
+- `Location: /api/campaigns/{id}`
+- response body with created campaign DTO
+
+### Validation error format
+Example response (`400 Bad Request`):
+`{ "errors": { "title": "must not be blank", "status": "must not be blank" } }`
+
+---
+
+## 📂 Project Structure (high-level)
+- `backend/` — Spring Boot backend
+- `frontend/` — React + TypeScript frontend (Vite)
+- `docs/` — progress tracker, tech notes, screenshots
+- `README.md`
+- `LICENSE`
 
 ---
 
@@ -259,48 +197,6 @@ This project demonstrates progressive skill development for full-stack web devel
 ---
 
 ## 📸 Screenshots
-
-### Week 1: Landing Page (HTML/CSS)
-
-**Desktop:**
-
-<table>
-  <tr>
-    <td><img src="docs/screenshots/week1/week1-desktop-hero.png" alt="Desktop Hero Section" width="400"/></td>
-    <td><img src="docs/screenshots/week1/week1-desktop-cards.png" alt="Desktop Campaign Cards" width="400"/></td>
-  </tr>
-</table>
-
-**Mobile:**
-
-<table>
-  <tr>
-    <td><img src="docs/screenshots/week1/week1-mobile-hero.png" alt="Mobile Hero" width="200"/></td>
-    <td><img src="docs/screenshots/week1/week1-mobile-cards.png" alt="Mobile Cards" width="200"/></td>
-  </tr>
-</table>
-
-### Week 2: Interactive Features (JavaScript)
-
-**Desktop:**
-
-<table>
-  <tr>
-    <td><img src="docs/screenshots/week2/week2-desktop-hero.png" alt="Desktop Hero" width="400"/></td>
-    <td><img src="docs/screenshots/week2/week2-desktop-filtered-campaigns.png" alt="Desktop Campaigns" width="400"/></td>
-    <td><img src="docs/screenshots/week2/week2-desktop-modal.png" alt="Desktop Modal" width="400"/></td>
-  </tr>
-</table>
-
-**Mobile:**
-
-<table>
-  <tr>
-    <td><img src="docs/screenshots/week2/week2-mobile-hero.png" alt="Mobile Hero" width="400"/></td>
-    <td><img src="docs/screenshots/week2/week2-mobile-filtered-campaigns.png" alt="Mobile Campaigns" width="400"/></td>
-    <td><img src="docs/screenshots/week2/week2-mobile-modal.png" alt="Mobile Modal" width="400"/></td>
-  </tr>
-</table>
 
 ### Week 4: TypeScript + React Router
 
@@ -415,4 +311,4 @@ See [LICENSE](LICENSE) file for details.
 
 ---
 
-_Last updated: March 3, 2026_
+_Last updated: March 19, 2026_

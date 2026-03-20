@@ -551,31 +551,48 @@ _(Week 3 używa tych samych screenów co Week 2 - UI wygląda tak samo, tylko po
 
 ---
 
-## 📅 WEEK 5-6: Backend + Integration (PLANNED)
+## 📅 TYDZIEŃ 5: Spring Boot Backend - REST API Basics (March 2026)
 
 ### Cele:
-- Spring Boot setup + PostgreSQL
-- REST API dla campaigns (CRUD endpoints)
-- JWT authentication (login, register, token validation)
-- User-Campaign relationships (creator, joined)
-- Frontend integration (Axios, AuthContext, Protected Routes)
-- Docker (Dockerfile + docker-compose)
+- Spring Boot backend setup
+- REST API dla campaigns (CRUD basics)
+- Walidacja requestów (Jakarta Validation)
+- Spójny format błędów walidacji (global exception handler)
+- Manual testing w Postmanie
+
+### Zrobione:
+- ✅ Spring Boot backend działa (Controller/Service architecture)
+- ✅ Campaign REST endpoints:
+  - `GET /api/campaigns` — lista kampanii
+  - `GET /api/campaigns/{id}` — `200 OK` / `404 Not Found`
+  - `POST /api/campaigns` — `201 Created` + `Location: /api/campaigns/{id}`
+  - `DELETE /api/campaigns/{id}` — `204 No Content` / `404 Not Found`
+- ✅ Validation (`@Valid`) dla `CreateCampaignRequest` + komunikaty po angielsku
+- ✅ Global validation error handler → format:
+  - `{ "errors": { "field": "message" } }`
+- ✅ Manual tests (Postman): create, validation errors, delete, not-found cases
+
+**Status:** ✅ ZAKOŃCZONY (March 19, 2026)
+
+---
+
+## 📅 TYDZIEŃ 6: Persistence - PostgreSQL + JPA + Flyway (PLANNED)
+
+### Cele:
+- Docker Compose: PostgreSQL jako baza dev
+- Flyway migrations (schema versioning)
+- JPA Entities + Repositories
+- Przeniesienie CampaignService z in-memory listy na DB
+- Przygotowanie pod integrację z frontendem
 
 ### TODO:
-- 🔜 Spring Boot project setup (Spring Initializr)
-- 🔜 Database schema (User, Campaign, PricingTier, Category tables)
-- 🔜 JPA Entities + Repositories
-- 🔜 Spring Security + JWT implementation
-- 🔜 Campaign CRUD endpoints
-- 🔜 User endpoints (profile, my campaigns, join/leave)
-- 🔜 Frontend: Axios setup + interceptors (token in headers)
-- 🔜 Frontend: AuthContext (login, logout, user state)
-- 🔜 Frontend: Protected Routes (redirect if not logged in)
-- 🔜 Docker: Dockerfile (backend + frontend)
-- 🔜 Docker Compose (backend + frontend + PostgreSQL)
+- 🔜 Flyway: `V1__init.sql` (tabele: na start `campaigns`)
+- 🔜 `Campaign` entity + `CampaignRepository`
+- 🔜 Konfiguracja `spring.datasource.*` + test połączenia z DB
+- 🔜 Zamiana endpointów kampanii na zapis/odczyt z Postgresa
 
 **Status:** 🚧 STARTING SOON
 
 ---
 
-_Last updated: March 3, 2026_
+_Last updated: March 19, 2026_
